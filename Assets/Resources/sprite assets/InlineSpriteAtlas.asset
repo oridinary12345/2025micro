@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd60da99dcbcc489982719943344aa4a, type: 3}
+  m_Name: InlineSpriteAtlas
+  m_EditorClassIdentifier: 
+  hashCode: 1413894955
+  material: {fileID: 2100000, guid: 167fa496d0cf467ea12b4f43fb1a820b, type: 2}
+  materialHashCode: 0
+  spriteSheet: {fileID: 2800000, guid: cabb27895aff11a46ad88c92ba8ecfe4, type: 3}
+  spriteInfoList:
+  - id: 0
+    x: 0
+    y: 238
+    width: 62
+    height: 62
+    xOffset: 3.4
+    yOffset: 51.2
+    xAdvance: 66.14
+    scale: 1
+    name: InlineSpriteAtlas_0
+    hashCode: 2133316452
+    unicode: 0
+    pivot: {x: -31, y: 31}
+    sprite: {fileID: 21300000, guid: 307abe94c7af4a609bd6acf5921173fc, type: 3}
+  - id: 1
+    x: 68
+    y: 238
+    width: 62
+    height: 62
+    xOffset: 3.06
+    yOffset: 50.49
+    xAdvance: 77.4
+    scale: 1
+    name: InlineSpriteAtlas_1
+    hashCode: 2133316453
+    unicode: 0
+    pivot: {x: -31, y: 31}
+    sprite: {fileID: 21300000, guid: 9c7a6e8ac4564d5f87dea28fdaee527f, type: 3}
+  - id: 2
+    x: 209
+    y: 237
+    width: 62
+    height: 62
+    xOffset: 0
+    yOffset: 49.87
+    xAdvance: 60
+    scale: 1
+    name: InlineSpriteAtlas_3
+    hashCode: 2133316455
+    unicode: 0
+    pivot: {x: -30.5, y: 31}
+    sprite: {fileID: 21300000, guid: e7b5c4c975ef4a2b9f012ef5602ba59b, type: 3}
+  - id: 3
+    x: 142
+    y: 238
+    width: 62
+    height: 62
+    xOffset: 5
+    yOffset: 49.5
+    xAdvance: 71.4
+    scale: 1.2
+    name: InlineSpriteAtlas_2
+    hashCode: 2133316454
+    unicode: 0
+    pivot: {x: -31, y: 31}
+    sprite: {fileID: 21300000, guid: f71553f1098b42fc9b37a06e5cbca815, type: 3}
+  - id: 5
+    x: 0
+    y: 162.13
+    width: 62
+    height: 62
+    xOffset: 3.4
+    yOffset: 51.2
+    xAdvance: 66.14
+    scale: 1
+    name: InlineSpriteAtlas_4
+    hashCode: 2133316448
+    unicode: 0
+    pivot: {x: -31, y: 31}
+    sprite: {fileID: 21300000, guid: 307abe94c7af4a609bd6acf5921173fc, type: 3}
+  - id: 5
+    x: 77.5
+    y: 168.42
+    width: 62
+    height: 62
+    xOffset: 5.4
+    yOffset: 51.2
+    xAdvance: 66.14
+    scale: 1.1
+    name: InlineSpriteAtlas_5
+    hashCode: 2133316449
+    unicode: 0
+    pivot: {x: -31, y: 31}
+    sprite: {fileID: 21300000, guid: 307abe94c7af4a609bd6acf5921173fc, type: 3}
+  fallbackSpriteAssets: []

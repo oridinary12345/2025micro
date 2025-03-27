@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f518568847bd03cb9eccae87ad188143, type: 3}
+  m_Name: "Settings"
+  m_EditorClassIdentifier: 
+  TotalMessagesSubmitted: 0
+  TotalMessagesFailed: 0
+  DesignMessagesSubmitted: 0
+  DesignMessagesFailed: 0
+  QualityMessagesSubmitted: 0
+  QualityMessagesFailed: 0
+  ErrorMessagesSubmitted: 0
+  ErrorMessagesFailed: 0
+  BusinessMessagesSubmitted: 0
+  BusinessMessagesFailed: 0
+  UserMessagesSubmitted: 0
+  UserMessagesFailed: 0
+  CustomArea: 
+  gameKey:
+  - "f19912c1b45919648a2f627942dd9239"
+  - "a706fd9552b43e543aba0274c684961a"
+  - 
+  - 
+  secretKey:
+  - "5716d8d53d3295e184d2918aa9654f3230e07a9d"
+  - "808a921e1ac0052e9cc90ef072101ce71fea7242"
+  - 
+  - 
+  Build:
+  - "0.5.38"
+  - "0.5.38"
+  - "0.5.38"
+  - "0.5.38"
+  SelectedPlatformStudio:
+  - "Dominic Hamelin-Blais"
+  - "Dominic Hamelin-Blais"
+  - 
+  - 
+  SelectedPlatformGame:
+  - "Micro RPG - Android"
+  - "Micro RPG - iOS"
+  - 
+  - 
+  SelectedPlatformGameID: 39C0000037C00000FFFFFFFFFFFFFFFF
+  SelectedStudio: 02000000020000000000000000000000
+  SelectedGame: 01000000020000000000000000000000
+  NewVersion: "4.0.4"
+  Changes: "4.0.4\n- fixes to android session handling\n- added custom dimensions
+  to design and error events\n- fixes to sqlite db path for windows
+  and linux platforms"
+  SignUpOpen: 0
+  StudioName: 
+  GameName: 
+  EmailGA: "dhamelin@gmail.com"
+  IntroScreen: 0
+  InfoLogEditor: 1
+  InfoLogBuild: 0
+  VerboseLogBuild: 0
+  UseManualSessionHandling: 0
+  SendExampleGameDataToMyGame: 0
+  InternetConnectivity: 0
+  CustomDimensions01: []
+  CustomDimensions02: []
+  CustomDimensions03: []
+  ResourceItemTypes:
+  - "unknown"
+  - "heroUpgrade"
+  - "weaponRepair"
+  - "weaponUpgrade"
+  - "gameEnded"
+  - "gameAbandoned"
+  - "inGameDrop"
+  - "iap"
+  - "shop"
+  - "gameOverContinue"
+  - "chestPremium"
+  - "chestFree"
+  - "newAccount"
+  - "adsRewardFreeChest"
+  - "adsRewardFreeRubies"
+  - "remoteReward"
+  - "worldUnlocked"
+  - "museum"
+  - "play"
+  ResourceCurrencies:
+  - "lootCoin"
+  - "lootRuby"
+  - "lootLife"
+  LastCreatedGamePlatform: 0
+  Platforms: 0B00000008000000
+  CurrentInspectorState: 1
+  ClosedHints: 
+  DisplayHints: 0
+  DisplayHintsScrollState: {x: 0, y: 0}
+  Logo: {fileID: 2800000, guid: d94d69b26e8d4fbcab18e89e27b37774, type: 3}
+  UpdateIcon: {fileID: 2800000, guid: 81e3dafeb4204f7683f19e07cc2bd8e4, type: 3}
+  InfoIcon: {fileID: 2800000, guid: 444cd5f7386941118d1d4cf0c247f09e, type: 3}
+  DeleteIcon: {fileID: 2800000, guid: d77aef0ed5bf489ab7adda3fb0f8f7f7, type: 3}
+  GameIcon: {fileID: 2800000, guid: 7bda3ad53c7748d89f33305cdb5135de, type: 3}
+  HomeIcon: {fileID: 2800000, guid: 94351f88327344e2bcb12944dfc3195d, type: 3}
+  InstrumentIcon: {fileID: 2800000, guid: c103c1dffe28486799e58964f65431cc, type: 3}
+  QuestionIcon: {fileID: 2800000, guid: d7d245520bc24929ab718ad3b92a3422, type: 3}
+  UserIcon: {fileID: 2800000, guid: e9a76346a98f4af3bc953be39cfa53dd, type: 3}
+  AmazonIcon: {fileID: 0}
+  GooglePlayIcon: {fileID: 0}
+  iosIcon: {fileID: 0}
+  macIcon: {fileID: 0}
+  windowsPhoneIcon: {fileID: 0}
+  UsePlayerSettingsBuildNumber: 1
+  SubmitErrors: 1
+  MaxErrorCount: 10
+  SubmitFpsAverage: 0
+  SubmitFpsCritical: 0
+  IncludeGooglePlay: 1
+  FpsCriticalThreshold: 20
+  FpsCirticalSubmitInterval: 1
+  PlatformFoldOut: 0101
+  CustomDimensions01FoldOut: 0
+  CustomDimensions02FoldOut: 0
+  CustomDimensions03FoldOut: 0
+  ResourceItemTypesFoldOut: 1
+  ResourceCurrenciesFoldOut: 1

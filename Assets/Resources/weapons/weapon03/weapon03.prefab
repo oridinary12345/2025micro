@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1790666223191544536}
+  m_IsPrefabParent: 1
+--- !u!4 &1790666223241876185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790666223191544536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1790666223191544536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790666223241876185}
+  - component: {fileID: 1790666225087369948}
+  - component: {fileID: 1790666224181400282}
+  - component: {fileID: 1790666226731537115}
+  m_Layer: 0
+  m_Name: "weapon03"
+  m_TagString:
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &1790666224181400282
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790666223191544536}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 3.52, y: 3.525}
+    newSize: {x: 3.52, y: 3.525}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.416091, y: 3.218218}
+      - {x: -1.074688, y: 3.366827}
+      - {x: -0.4286453, y: 3.509004}
+      - {x: 0.3462237, y: 3.524143}
+      - {x: 0.9757037, y: 3.389264}
+      - {x: 1.378722, y: 3.240432}
+      - {x: 1.754113, y: 3.056952}
+      - {x: 1.311332, y: 2.29522}
+      - {x: 0.7533987, y: 2.560976}
+      - {x: 0.3254626, y: 2.642601}
+      - {x: -0.0165484, y: 2.645559}
+      - {x: -0.4658457, y: 2.633155}
+      - {x: -0.8854707, y: 2.517166}
+      - {x: -1.322518, y: 2.305386}
+      - {x: -1.750322, y: 3.045394}
+--- !u!212 &1790666226731537115
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790666223191544536}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_LightmapIndex: 65535
+  m_LightmapIndexDynamic: 65535
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_LightmapTilingOffsetDynamic: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 16b66559225a4356b25f54d639438851, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3d9a25bc4f554d23acb15a1c10821f81, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.52, y: 3.525}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1790666225087369948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790666223191544536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6828535e10939b583c12a301c919467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSprite: {fileID: 21300000, guid: 8632c19b987a4c85aa74fbc6f461b61d, type: 3}
+  WeaponSpriteBroken: {fileID: 21300000, guid: 9dc2dd7a2b8b448cb97c631b913ee114, type: 3}
+  WeaponSpriteUI: {fileID: 21300000, guid: 755a4b44cb2a4088810a986a898babc0, type: 3}
+  WeaponSpriteBrokenUI: {fileID: 21300000, guid: b5dd6e8dc58b4a8f88c4d75baa0b21e9, type: 3}
+  WeaponExtraSprite: {fileID: 21300000, guid: 08b2bcf2284948859f4bf972853a90b3, type: 3}
+  WeaponExtraSpriteBroken: {fileID: 21300000, guid: d537afe468e24c57b0cc61c1d4bbeefe, type: 3}
+  WeaponExtraAnimationSprite: {fileID: 0}
+  WeaponExtraSpriteUI: {fileID: 0}
+  WeaponShapeSprite: {fileID: 21300000, guid: 3d9a25bc4f554d23acb15a1c10821f81, type: 3}
+  ImpactFX: {fileID: 0}
+  Projectile: {fileID: 1790666223191544536, guid: bf9e200a387546f59c053076de8e8746, type: 2}
+  ProjectileLandingFX: {fileID: 1790666223191544536, guid: 59d78a45df814fd7a73d9ad7e38288a5, type: 2}
+  ShapeField: {fileID: 1790666223191544537, guid: e92527f145bb433686ed9ed1dfd18ab6, type: 2}
+  Colliders:
+  - {fileID: 1790666224181400282}

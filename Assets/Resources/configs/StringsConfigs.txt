@@ -1,0 +1,11 @@
+Keys	Description	English	French	Russian	Spanish
+txt_english		English	English	English	English
+txt_french		Français	Français	Français	Français
+txt_settingsTitle		Settings	Options	настройки	ajustes
+txt_settingsLanguage		Language	Langue	язык	Idioma
+txt_settingsContact		Contact Us	Contactez-nous	Связаться с нами	Contáctenos
+txt_settingsPromo		Code	Code	Код	Código
+txt_settingsResetGame		Reset Game	Réinit.	Reset Game	Reiniciar el juego
+txt_settingsMusic		Music	Musique	Музыка	Música
+txt_settingsSoundFX		Sound FX	FX	Sound FX	Sonido FX
+txt_settingsBattery		Battery\nSaving	Économie\nBatterie	Батарея \ nSaving	Batería \ nSaving

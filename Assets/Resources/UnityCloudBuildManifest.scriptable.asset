@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 832168659, guid: dc26f97b83ff87c566db911d8b426fac, type: 3}
+  m_Name: "UnityCloudBuildManifest.scriptable"
+  m_EditorClassIdentifier: 
+  m_manifestJson: "{\"cloudBuildTargetName\":\"android\",\"buildNumber\":\"54\",\"scmCommitId\":\"ad2ae4cd4ea647bd777daf5a0057c3814f935de1\",\"buildStartTime\":\"2\x2f25\x2f2019
+  6:02:16 AM\",\"projectId\":\"dominic-hamelin-blais\x2fmicro-rpg-proto\",\"bundleId\":\"com.dhb.microrpg\",\"scmBranch\":\"Demo6A\",\"unityVersion\":\"2018.2.20f1\"}"

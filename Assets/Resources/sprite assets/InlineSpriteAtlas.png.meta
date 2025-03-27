@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: cabb27895aff11a46ad88c92ba8ecfe4
+timeCreated: 1638875042
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: InlineSpriteAtlas_0
+    21300002: InlineSpriteAtlas_1
+    21300004: InlineSpriteAtlas_2
+    21300006: InlineSpriteAtlas_3
+    21300008: InlineSpriteAtlas_4
+    21300010: InlineSpriteAtlas_5
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 4
+  maxTextureSize: 300
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: InlineSpriteAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 238
+        width: 60.97325
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5084197, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.48663, y: -31}
+        - {x: -30.48662, y: -20}
+        - {x: -30.48662, y: 26}
+        - {x: -27.48662, y: 31}
+        - {x: 28.51338, y: 31}
+        - {x: 30.51338, y: 19}
+        - {x: 30.51338, y: -22}
+        - {x: 19.51338, y: -31}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfd769e37c149a0a4c850bbd703280e
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InlineSpriteAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 78.02675
+        y: 244.0761
+        width: 49.93034
+        height: 46.89713
+      alignment: 9
+      pivot: {x: 0.460106, y: 0.5314584}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.99192, y: -23.52469}
+        - {x: -24.99192, y: -6.524691}
+        - {x: -24.99192, y: 23.47531}
+        - {x: 25.00808, y: 23.47531}
+        - {x: 25.00808, y: -4.524691}
+        - {x: 5.00808, y: -23.52469}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c91adb79884e4f8e71adeb05fd7855
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InlineSpriteAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 240.0429
+        width: 59.97325
+        height: 59.88097
+      alignment: 9
+      pivot: {x: 0.5168971, y: 0.4835775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.98662, y: -29.98339}
+        - {x: -29.98662, y: -25.98339}
+        - {x: -29.98662, y: 17.01661}
+        - {x: -25.98663, y: 30.01661}
+        - {x: 21.01338, y: 30.01661}
+        - {x: 30.01338, y: 23.01661}
+        - {x: 30.01338, y: -29.98339}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f9c301d2e84eb58637f3674c02f463
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InlineSpriteAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 208.0761
+        y: 244.0761
+        width: 60.84776
+        height: 50.89713
+      alignment: 9
+      pivot: {x: 0.4999999, y: 0.4700437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.500004, y: -25.52469}
+        - {x: -30.5, y: -5.524689}
+        - {x: -30.5, y: 16.47531}
+        - {x: -28.5, y: 23.47531}
+        - {x: -19.5, y: 25.47531}
+        - {x: 25.5, y: 25.47531}
+        - {x: 30.5, y: 12.47531}
+        - {x: 30.5, y: -7.524689}
+        - {x: 6.499996, y: -25.52469}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99e259f0f68466fa77b949aea3e2286
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InlineSpriteAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167.0761
+        width: 58.92388
+        height: 59.84776
+      alignment: 9
+      pivot: {x: 0.5261025, y: 0.4832909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.53806, y: -30}
+        - {x: -29.46194, y: -30}
+        - {x: -29.46194, y: 25}
+        - {x: -25.46194, y: 28}
+        - {x: 0.5380592, y: 30}
+        - {x: 26.53806, y: 30}
+        - {x: 29.53806, y: 26}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c64322cade54edc8895aec9c39e9c6b
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InlineSpriteAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 76.07612
+        y: 179.0761
+        width: 55.92388
+        height: 38.84776
+      alignment: 9
+      pivot: {x: 0.481438, y: 0.4613876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.03806, y: -19.5}
+        - {x: -28.03806, y: -17.5}
+        - {x: -28.03806, y: 17.5}
+        - {x: -26.03806, y: 19.5}
+        - {x: 27.96194, y: 19.5}
+        - {x: 27.96194, y: -19.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2724293e71444539c5e411143ec8491
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

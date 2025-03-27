@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 8a8b9a6195eb4157b37d9d5f1322d99f
+timeCreated: 1638875177
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: "ARIALBD"
+  fontNames:
+  - Arial
+  fallbackFontReferences: []
+  customCharacters:
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData:
+  assetBundleName: 
+  assetBundleVariant: 

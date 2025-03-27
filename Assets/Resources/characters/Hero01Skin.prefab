@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1790666223191544536}
+  m_IsPrefabParent: 1
+--- !u!4 &1790666223241876185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790666223191544536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1790666223191544536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790666223241876185}
+  - component: {fileID: 1790666225087369946}
+  m_Layer: 0
+  m_Name: "Hero01Skin"
+  m_TagString:
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1790666225087369946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790666223191544536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89dea7b7dcacbde9a71079df27bc8de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack1: {fileID: 21300000, guid: c2df83697ed1419ba25297b58cfd569b, type: 3}
+  Attack2: {fileID: 21300000, guid: c2df83697ed1419ba25297b58cfd569b, type: 3}
+  Death0: {fileID: 21300000, guid: 307022d3f3604332a465436541373346, type: 3}
+  Death1: {fileID: 21300000, guid: 8f3bf56284c04e5fab87257318d64695, type: 3}
+  Death2: {fileID: 21300000, guid: bfdaca90cece425d815b6659eb235783, type: 3}
+  Death3: {fileID: 21300000, guid: ebe2162c8ce449008670ede147c13e40, type: 3}
+  Damage1: {fileID: 21300000, guid: 3a0c3916df5f4eb49dd2c3ffb731a391, type: 3}
+  Damage2: {fileID: 21300000, guid: 307022d3f3604332a465436541373346, type: 3}
+  Idle: {fileID: 21300000, guid: 588578d555d54acda922ee93494bd38b, type: 3}
+  Jump: {fileID: 21300000, guid: eb35a5be7e754160ba901a172a91f926, type: 3}
+  Dodge: {fileID: 21300000, guid: 588578d555d54acda922ee93494bd38b, type: 3}
+  Run1: {fileID: 21300000, guid: a9d9f6d2fd474463abde2260633764b7, type: 3}
+  Run2: {fileID: 21300000, guid: da4d6b1e32fc45528cf2b6162aeb2fa2, type: 3}
+  Win: {fileID: 21300000, guid: 774593bfb1fe4bf3ae2ab1519811c169, type: 3}
+  Suprised: {fileID: 21300000, guid: 941d30b15e4f464c819f02dc0ad8190a, type: 3}
+  WeaponFound: {fileID: 21300000, guid: 22659fe3fa26484d8b3d09c64fe31753, type: 3}
+  Opened: {fileID: 0}
+  Sleep: {fileID: 0}
+  CapsuleCollider: {fileID: 0}
+  StatusBarPosY: 1.1
+  ExclamationPosY: 1.3
+  TargetArrowPosY: 1.48
+  SpawnPivot: {fileID: 0}

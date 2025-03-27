@@ -1,0 +1,23 @@
+public enum CurrencyReason
+{
+	unknown,
+	heroUpgrade,
+	weaponRepair,
+	weaponUpgrade,
+	gameEnded,
+	gameAbandoned,
+	inGameDrop,
+	iap,
+	shop,
+	gameOverContinue,
+	chestPremium,
+	chestFree,
+	newAccount,
+	adsRewardFreeChest,
+	adsRewardFreeRubies,
+	remoteReward,
+	worldUnlocked,
+	keyGeneration,
+	play,
+	quest
+}

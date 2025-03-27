@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Monster
+  - Hero
+  - Wall
+  - HeroTarget
+  - ZoneDangerMonster
+  - ZoneDangerHero
+  - ZoneAttackMonster
+  - ZoneAttackHero
+  - LootGatherer
+  - LootLifeTarget
+  - Loot
+  - HeroWeapon
+  - LootCoinsTarget
+  - UIGameHUD
+  - GameTouchZone
+  - LootLife
+  - MainAppCanvas
+  - LootRubyTarget
+  - FxTemporaire
+  - LootKingTokenTarget
+  - LevelTokenText
+  - GameIntroBox
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Weapon
+  - Hero
+  - Monster
+  - Loot
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: "Default"
+    uniqueID: 0
+    locked: 0
+  - name: "Particles"
+    uniqueID: 1510613161
+    locked: 0

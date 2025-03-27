@@ -1,0 +1,1 @@
+{"cloudBuildTargetName":"android","buildNumber":"54","scmCommitId":"ad2ae4cd4ea647bd777daf5a0057c3814f935de1","buildStartTime":"2/25/2019 6:02:16 AM","projectId":"dominic-hamelin-blais/micro-rpg-proto","bundleId":"com.dhb.microrpg","scmBranch":"Demo6A","unityVersion":"2018.2.20f1"}
