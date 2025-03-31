@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace I2.Loc
 {
-	public class LocalizeTarget_UnityStandard_GUITexture : LocalizeTarget<GUITexture>
+	public class LocalizeTarget_UnityStandard_GUITexture : LocalizeTarget<Image>
 	{
 		static LocalizeTarget_UnityStandard_GUITexture()
 		{
@@ -12,8 +13,8 @@ namespace I2.Loc
 		[RuntimeInitializeOnLoadMethod]
 		private static void AutoRegister()
 		{
-			LocalizeTargetDesc_Type<GUITexture, LocalizeTarget_UnityStandard_GUITexture> localizeTargetDesc_Type = new LocalizeTargetDesc_Type<GUITexture, LocalizeTarget_UnityStandard_GUITexture>();
-			localizeTargetDesc_Type.Name = "GUITexture";
+			LocalizeTargetDesc_Type<Image, LocalizeTarget_UnityStandard_GUITexture> localizeTargetDesc_Type = new LocalizeTargetDesc_Type<Image, LocalizeTarget_UnityStandard_GUITexture>();
+			localizeTargetDesc_Type.Name = "Image";
 			localizeTargetDesc_Type.Priority = 100;
 			LocalizationManager.RegisterTarget(localizeTargetDesc_Type);
 		}
@@ -45,16 +46,16 @@ namespace I2.Loc
 
 		public override void GetFinalTerms(Localize cmp, string Main, string Secondary, out string primaryTerm, out string secondaryTerm)
 		{
-			primaryTerm = ((!mTarget.texture) ? string.Empty : mTarget.texture.name);
+			primaryTerm = ((!mTarget.sprite) ? string.Empty : mTarget.sprite.name);
 			secondaryTerm = null;
 		}
 
 		public override void DoLocalize(Localize cmp, string mainTranslation, string secondaryTranslation)
 		{
-			Texture texture = mTarget.texture;
-			if (texture == null || texture.name != mainTranslation)
+			Sprite sprite = mTarget.sprite;
+			if (sprite == null || sprite.name != mainTranslation)
 			{
-				mTarget.texture = cmp.FindTranslatedObject<Texture>(mainTranslation);
+				mTarget.sprite = cmp.FindTranslatedObject<Sprite>(mainTranslation);
 			}
 		}
 	}

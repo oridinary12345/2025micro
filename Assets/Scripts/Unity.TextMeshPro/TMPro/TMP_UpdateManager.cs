@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 namespace TMPro
 {
@@ -33,7 +34,7 @@ namespace TMPro
 		protected TMP_UpdateManager()
 		{
 			Camera.onPreCull = (Camera.CameraCallback)Delegate.Combine(Camera.onPreCull, new Camera.CameraCallback(OnCameraPreCull));
-			RenderPipeline.beginFrameRendering += OnBeginFrameRendering;
+			RenderPipelineManager.beginFrameRendering += OnBeginFrameRendering;
 		}
 
 		public static void RegisterTextElementForLayoutRebuild(TMP_Text element)
@@ -70,12 +71,12 @@ namespace TMPro
 			return true;
 		}
 
-		private void OnBeginFrameRendering(Camera[] cameras)
+		private void OnCameraPreCull(Camera cam)
 		{
 			DoRebuilds();
 		}
 
-		private void OnCameraPreCull(Camera cam)
+		private void OnBeginFrameRendering(ScriptableRenderContext context, Camera[] cameras)
 		{
 			DoRebuilds();
 		}

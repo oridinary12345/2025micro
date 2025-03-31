@@ -114,6 +114,11 @@ public class InAppManager : MonoSingleton<InAppManager>, IStoreListener
 		UnityEngine.Debug.Log("OnInitializeFailed InitializationFailureReason:" + error);
 	}
 
+	public void OnInitializeFailed(InitializationFailureReason error, string message)
+	{
+		UnityEngine.Debug.Log($"OnInitializeFailed InitializationFailureReason: {error}, Message: {message}");
+	}
+
 	public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
 	{
 		_purchaseIdInProgress = string.Empty;

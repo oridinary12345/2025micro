@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace I2.Loc
 {
-	public class LocalizeTarget_UnityStandard_GUIText : LocalizeTarget<GUIText>
+	public class LocalizeTarget_UnityStandard_GUIText : LocalizeTarget<Text>
 	{
 		private TextAlignment mAlignment_RTL = TextAlignment.Right;
 
@@ -17,11 +18,11 @@ namespace I2.Loc
 			AutoRegister();
 		}
 
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+		[RuntimeInitializeOnLoadMethod]
 		private static void AutoRegister()
 		{
-			LocalizeTargetDesc_Type<GUIText, LocalizeTarget_UnityStandard_GUIText> localizeTargetDesc_Type = new LocalizeTargetDesc_Type<GUIText, LocalizeTarget_UnityStandard_GUIText>();
-			localizeTargetDesc_Type.Name = "GUIText";
+			LocalizeTargetDesc_Type<Text, LocalizeTarget_UnityStandard_GUIText> localizeTargetDesc_Type = new LocalizeTargetDesc_Type<Text, LocalizeTarget_UnityStandard_GUIText>();
+			localizeTargetDesc_Type.Name = "Text";
 			localizeTargetDesc_Type.Priority = 100;
 			LocalizationManager.RegisterTarget(localizeTargetDesc_Type);
 		}
@@ -33,7 +34,7 @@ namespace I2.Loc
 
 		public override eTermType GetSecondaryTermType(Localize cmp)
 		{
-			return eTermType.Font;
+			return eTermType.Text;
 		}
 
 		public override bool CanUseSecondaryTerm()
@@ -48,41 +49,24 @@ namespace I2.Loc
 
 		public override bool AllowSecondTermToBeRTL()
 		{
-			return false;
+			return true;
 		}
 
 		public override void GetFinalTerms(Localize cmp, string Main, string Secondary, out string primaryTerm, out string secondaryTerm)
 		{
-			primaryTerm = ((!mTarget) ? null : mTarget.text);
-			secondaryTerm = ((!string.IsNullOrEmpty(Secondary) || !(mTarget.font != null)) ? null : mTarget.font.name);
+			primaryTerm = mTarget.text;
+			secondaryTerm = null;
 		}
 
 		public override void DoLocalize(Localize cmp, string mainTranslation, string secondaryTranslation)
 		{
-			Font secondaryTranslatedObj = cmp.GetSecondaryTranslatedObj<Font>(ref mainTranslation, ref secondaryTranslation);
-			if (secondaryTranslatedObj != null && mTarget.font != secondaryTranslatedObj)
+			Font newFont = cmp.GetSecondaryTranslatedObj<Font>(ref mainTranslation, ref secondaryTranslation);
+			if (newFont != null && mTarget.font != newFont)
 			{
-				mTarget.font = secondaryTranslatedObj;
+				mTarget.font = newFont;
 			}
-			if (mInitializeAlignment)
+			if (mTarget.text != mainTranslation)
 			{
-				mInitializeAlignment = false;
-				mAlignment_LTR = (mAlignment_RTL = mTarget.alignment);
-				if (LocalizationManager.IsRight2Left && mAlignment_RTL == TextAlignment.Right)
-				{
-					mAlignment_LTR = TextAlignment.Left;
-				}
-				if (!LocalizationManager.IsRight2Left && mAlignment_LTR == TextAlignment.Left)
-				{
-					mAlignment_RTL = TextAlignment.Right;
-				}
-			}
-			if (mainTranslation != null && mTarget.text != mainTranslation)
-			{
-				if (cmp.CorrectAlignmentForRTL && mTarget.alignment != TextAlignment.Center)
-				{
-					mTarget.alignment = ((!LocalizationManager.IsRight2Left) ? mAlignment_LTR : mAlignment_RTL);
-				}
 				mTarget.text = mainTranslation;
 			}
 		}

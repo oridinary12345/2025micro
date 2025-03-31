@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
 
 	public class PurchaseListener : IPurchaseListener
 	{
+		public void OnPurchasePending(string message, PurchaseInfo purchaseInfo)
+		{
+			UnityEngine.Debug.Log("Purchase Pending: " + message);
+			Show("Purchase Pending: " + message);
+		}
+
 		public void OnPurchase(PurchaseInfo purchaseInfo)
 		{
 			string message = $"[Game] Purchase Succeeded, productId: {purchaseInfo.ProductId}, cpOrderId: {purchaseInfo.GameOrderId}, developerPayload: {purchaseInfo.DeveloperPayload}, storeJson: {purchaseInfo.StorePurchaseJsonString}";
