@@ -76,21 +76,32 @@ public class App : MonoBehaviour
 		_instance = this;
 		Events = new AppEvents();
 		MenuEvents = new MenuEvents();
-		MonoSingleton<InAppManager>.Instance.Create();
 		Analytics = base.gameObject.AddComponent<Analytics>();
 		new GameObject("Configs").transform.parent = base.transform;
 		Configs = new GameConfigs();
 		base.gameObject.AddComponent<AudioListener>();
-		MonoSingleton<GameMusicManager>.Instance.Create();
-		MonoSingleton<GameMusicManager>.Instance.transform.parent = base.transform;
+		
+		// 初始化基础管理器
 		MonoSingleton<TimeManager>.Instance.Create();
 		MonoSingleton<TimeManager>.Instance.transform.parent = base.transform;
-		MonoSingleton<GameAdsController>.Instance.Create();
-		MonoSingleton<GameAdsController>.Instance.transform.parent = base.transform;
+		
 		MonoSingleton<Cloud>.Instance.Create();
 		MonoSingleton<Cloud>.Instance.transform.parent = base.transform;
+		
 		RewardFactory = base.gameObject.AddComponent<RewardFactory>().Init(MonoSingleton<RewardConfigs>.Instance);
+		
+		// 初始化玩家
 		InitPlayer();
+		
+		// 初始化需要玩家数据的管理器
+		MonoSingleton<GameMusicManager>.Instance.Create();
+		MonoSingleton<GameMusicManager>.Instance.transform.parent = base.transform;
+		
+		MonoSingleton<GameAdsController>.Instance.Create();
+		MonoSingleton<GameAdsController>.Instance.transform.parent = base.transform;
+		
+		MonoSingleton<InAppManager>.Instance.Create();
+		
 		FXManager = base.gameObject.AddComponent<CommonFXManager>().Setup(Player);
 	}
 

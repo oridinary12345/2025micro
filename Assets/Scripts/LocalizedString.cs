@@ -1,4 +1,6 @@
 using System;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace I2.Loc
 {
@@ -13,12 +15,12 @@ namespace I2.Loc
 
 		public bool mRTL_ConvertNumbers;
 
-		public LocalizedString(LocalizedString str)
+		public LocalizedString(string term)
 		{
-			mTerm = str.mTerm;
-			mRTL_IgnoreArabicFix = str.mRTL_IgnoreArabicFix;
-			mRTL_MaxLineLength = str.mRTL_MaxLineLength;
-			mRTL_ConvertNumbers = str.mRTL_ConvertNumbers;
+			mTerm = term;
+			mRTL_IgnoreArabicFix = false;
+			mRTL_MaxLineLength = 0;
+			mRTL_ConvertNumbers = false;
 		}
 
 		public static implicit operator string(LocalizedString s)
@@ -35,8 +37,8 @@ namespace I2.Loc
 
 		public override string ToString()
 		{
-			string translation = LocalizationManager.GetTranslation(mTerm, !mRTL_IgnoreArabicFix, mRTL_MaxLineLength, !mRTL_ConvertNumbers, true);
-			LocalizationManager.ApplyLocalizationParams(ref translation);
+			string translation = LocalizationHelper.GetTranslation(mTerm);
+			// 不再使用 LocalizationManager.ApplyLocalizationParams
 			return translation;
 		}
 	}

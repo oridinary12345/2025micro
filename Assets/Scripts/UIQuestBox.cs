@@ -59,19 +59,52 @@ public class UIQuestBox : MonoBehaviour
 
 	private UIQuestBox Init(MonsterMisionEvents events, MonsterMissionData data, Action<RectTransform, string> onChestClicked)
 	{
+		if (data == null)
+		{
+			Debug.LogError("MonsterMissionData is null in UIQuestBox.Init");
+			return this;
+		}
+
 		_data = data;
 		_events = events;
-		_monsterImage.sprite = Resources.Load<Sprite>("Monsters/" + data.MonsterId);
-		_monsterImage.color = ((!IsUnlocked()) ? new Color(0f, 0f, 0f, 0.5f) : Color.white);
-		_rewardTitle.enabled = IsUnlocked();
-		_rewardImage.enabled = IsUnlocked();
-		_chestButton.OnClick(delegate
+
+		if (_monsterImage == null)
 		{
-			onChestClicked(_rewardInfoPivot, data.MonsterId);
-		});
+			Debug.LogError("_monsterImage is null in UIQuestBox");
+			return this;
+		}
+
+		string monsterId = data.MonsterId;
+		if (string.IsNullOrEmpty(monsterId))
+		{
+			Debug.LogError("MonsterId is null or empty in MonsterMissionData");
+			return this;
+		}
+
+		Sprite monsterSprite = Resources.Load<Sprite>("Monsters/" + monsterId);
+		if (monsterSprite == null)
+		{
+			Debug.LogError($"Could not load sprite for monster: Monsters/{monsterId}");
+			return this;
+		}
+
+		_monsterImage.sprite = monsterSprite;
+		_monsterImage.color = ((!IsUnlocked()) ? new Color(0f, 0f, 0f, 0.5f) : Color.white);
+
+		if (_rewardTitle != null) _rewardTitle.enabled = IsUnlocked();
+		if (_rewardImage != null) _rewardImage.enabled = IsUnlocked();
+		if (_chestButton != null && _rewardInfoPivot != null)
+		{
+			_chestButton.OnClick(delegate
+			{
+				onChestClicked(_rewardInfoPivot, monsterId);
+			});
+		}
+
 		RefreshUI();
-		_claimButton.OnClick(OnClaimButtonClicked);
-		_events.MonsterRewardClaimedEvent += MonsterRewardClaimedEvent;
+		if (_claimButton != null) _claimButton.OnClick(OnClaimButtonClicked);
+		if (_events != null) _events.MonsterRewardClaimedEvent += MonsterRewardClaimedEvent;
+
 		return this;
 	}
 

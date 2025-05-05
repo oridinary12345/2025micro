@@ -14,5 +14,5 @@ public class SettingsProfile
 	public bool SoundEnabled = true;
 
 	[JsonProperty(PropertyName = "lang", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
-	public string Language = string.Empty;
+	public string Language = "Chinese (Simplified)";
 }

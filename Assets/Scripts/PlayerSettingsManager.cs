@@ -1,4 +1,5 @@
-using I2.Loc;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using UnityEngine;
 
 public class PlayerSettingsManager
@@ -50,24 +51,41 @@ public class PlayerSettingsManager
 		set
 		{
 			_profile.Language = value;
-			LocalizationManager.CurrentLanguage = _profile.Language;
+			LocalizationHelper.CurrentLanguage = _profile.Language;
 		}
 	}
 
 	public PlayerSettingsManager(SettingsProfile profile)
 	{
 		_profile = profile;
-		if (string.IsNullOrEmpty(Language))
+		InitLanguage();
+	}
+
+	private void InitLanguage()
+	{
+		// 如果已经有保存的语言设置，使用保存的设置
+		if (!string.IsNullOrEmpty(Language))
 		{
-			string language = Application.systemLanguage.ToString();
-			if (LocalizationManager.HasLanguage(language))
+			if (LocalizationHelper.HasLanguage(Language))
 			{
-				Language = language;
+				LocalizationHelper.CurrentLanguage = Language;
+				return;
 			}
-			else
-			{
-				Language = "English";
-			}
+		}
+
+		// 默认使用中文
+		if (LocalizationHelper.HasLanguage("Chinese (Simplified)"))
+		{
+			Language = "Chinese (Simplified)";
+			LocalizationHelper.CurrentLanguage = "Chinese (Simplified)";
+			return;
+		}
+
+		// 如果没有中文，使用英文作为后备语言
+		if (LocalizationHelper.HasLanguage("English"))
+		{
+			Language = "English";
+			LocalizationHelper.CurrentLanguage = "English";
 		}
 	}
 }
