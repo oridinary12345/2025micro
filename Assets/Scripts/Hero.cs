@@ -108,8 +108,19 @@ public class Hero : Character
 
 	protected override void UpdateWeapons(List<WeaponData> weapons)
 	{
+		if (weapons == null || weapons.Count == 0)
+		{
+			Debug.LogWarning("No weapons available in UpdateWeapons");
+			_weapons = new List<WeaponData>();
+			UnregisterWeaponEvent();
+			_currentWeapon = null;
+			return;
+		}
+
 		_weapons = weapons;
-		if (_weapons.Find((WeaponData w) => w.Id == _currentWeapon.Id) == null)
+		
+		// 如果当前武器不在新的武器列表中，切换到第一个可用武器
+		if (_currentWeapon == null || _weapons.Find((WeaponData w) => w.Id == _currentWeapon.Id) == null)
 		{
 			UnregisterWeaponEvent();
 			_currentWeapon = weapons[0];

@@ -48,21 +48,115 @@ public class UIShopPanel : UIMenuPage
         _closeButton.ActivateOnBackKey();
         _noAdsPopup = UINoAdsAvailablePanel.Create();
         _menuRewardController = UIRewardsController.Create();
+        
+        // 初始化免费宝石配置
         _freeRubiesProfile = new FreeRubiesProfile();
+        string savedProfile = PlayerPrefs.GetString(FreeRubiesDateKey, null);
+        if (!string.IsNullOrEmpty(savedProfile))
+        {
+            try
+            {
+                _freeRubiesProfile = JsonConvert.DeserializeObject<FreeRubiesProfile>(savedProfile) ?? new FreeRubiesProfile();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error loading free rubies profile: {ex.Message}");
+            }
+        }
+        
+        // 创建免费宝石商店框
+        if (_freeRubiesShopBox == null)
+        {
+            var freeRubiesConfig = new ShopProductConfig(
+                productId: "free_rubies",
+                iapId: "",
+                title: "Free Rubies",
+                description: "Watch a video to get free rubies!",
+                type: ShopProductType.Rubies,
+                purchaseType: ProductType.Consumable,
+                amount: 50,
+                bonus: ""
+            );
+            
+            _freeRubiesShopBox = CreateProductBox(freeRubiesConfig);
+            if (_freeRubiesShopBox != null)
+            {
+                _freeRubiesShopBox.transform.SetParent(_rubiesContent, false);
+                _freeRubiesShopBox.gameObject.SetActive(false);
+            }
+        }
         _freeRubiesProfile.ConsumedDate.Time = DateTime.UtcNow;
         LoadFreeRubiesProfile();
-        _chestAds = UnityEngine.Object.Instantiate(Resources.Load<UIShopPanelBoxChest>("UI/ShopChestBox"));
-        _chestAds.Init(chestManager.GetChestData("chestTimedFree"), "UI/UI_shop_chest01");
-        _chestAds.Button.OnClick(OnFreeBoxButtonClicked);
-        _chestAds.GetComponent<RectTransform>().SetParent(_chestContent, false);
-        _chestPremium1 = UnityEngine.Object.Instantiate(Resources.Load<UIShopPanelBoxChest>("UI/ShopChestBox"));
-        _chestPremium1.Init(chestManager.GetChestData("chestPremium1"), "UI/UI_shop_chest02");
-        _chestPremium1.Button.OnClick(OnPremium1ButtonClicked);
-        _chestPremium1.GetComponent<RectTransform>().SetParent(_chestContent, false);
-        _chestPremium2 = UnityEngine.Object.Instantiate(Resources.Load<UIShopPanelBoxChest>("UI/ShopChestBox"));
-        _chestPremium2.Init(chestManager.GetChestData("chestPremium2"), "UI/UI_shop_chest03");
-        _chestPremium2.Button.OnClick(OnPremium2ButtonClicked);
-        _chestPremium2.GetComponent<RectTransform>().SetParent(_chestContent, false);
+        // 初始化广告宝箱
+        var chestBoxPrefab = Resources.Load<UIShopPanelBoxChest>("UI/ShopChestBox");
+        if (chestBoxPrefab == null)
+        {
+            Debug.LogError("Failed to load ShopChestBox prefab");
+            return;
+        }
+
+        // 初始化广告宝箱
+        _chestAds = UnityEngine.Object.Instantiate(chestBoxPrefab);
+        if (_chestAds != null)
+        {
+            var chestData = chestManager.GetChestData("chestTimedFree");
+            if (chestData != null)
+            {
+                _chestAds.Init(chestData, "UI/UI_shop_chest01");
+                _chestAds.Button.OnClick(OnFreeBoxButtonClicked);
+                _chestAds.GetComponent<RectTransform>().SetParent(_chestContent, false);
+            }
+            else
+            {
+                Debug.LogError("Failed to get chestTimedFree data");
+            }
+        }
+        else
+        {
+            Debug.LogError("Failed to instantiate _chestAds");
+        }
+
+        // 初始化高级宝箱1
+        _chestPremium1 = UnityEngine.Object.Instantiate(chestBoxPrefab);
+        if (_chestPremium1 != null)
+        {
+            var chestData = chestManager.GetChestData("chestPremium1");
+            if (chestData != null)
+            {
+                _chestPremium1.Init(chestData, "UI/UI_shop_chest02");
+                _chestPremium1.Button.OnClick(OnPremium1ButtonClicked);
+                _chestPremium1.GetComponent<RectTransform>().SetParent(_chestContent, false);
+            }
+            else
+            {
+                Debug.LogError("Failed to get chestPremium1 data");
+            }
+        }
+        else
+        {
+            Debug.LogError("Failed to instantiate _chestPremium1");
+        }
+
+        // 初始化高级宝箱2
+        _chestPremium2 = UnityEngine.Object.Instantiate(chestBoxPrefab);
+        if (_chestPremium2 != null)
+        {
+            var chestData = chestManager.GetChestData("chestPremium2");
+            if (chestData != null)
+            {
+                _chestPremium2.Init(chestData, "UI/UI_shop_chest03");
+                _chestPremium2.Button.OnClick(OnPremium2ButtonClicked);
+                _chestPremium2.GetComponent<RectTransform>().SetParent(_chestContent, false);
+            }
+            else
+            {
+                Debug.LogError("Failed to get chestPremium2 data");
+            }
+        }
+        else
+        {
+            Debug.LogError("Failed to instantiate _chestPremium2");
+        }
         List<ShopProductConfig> productConfigs = ShopProductCatalog.GetProductConfigs(ShopProductType.Rubies);
         foreach (ShopProductConfig product in productConfigs)
         {
@@ -113,6 +207,12 @@ public class UIShopPanel : UIMenuPage
 
     private void UpdateContent()
     {
+        if (_chestAds == null || _chestPremium1 == null || _chestPremium2 == null)
+        {
+            Debug.LogWarning("UpdateContent: Some chest components are missing");
+            return;
+        }
+
         _chestAds.UpdateContent();
         _chestPremium1.UpdateContent();
         _chestPremium2.UpdateContent();
@@ -184,11 +284,30 @@ public class UIShopPanel : UIMenuPage
 
     private void RefreshFreeRubiesButton()
     {
-        if (_freeRubiesProfile.ConsumedDate.Time.AddDays(1.0) < DateTime.UtcNow)
+        // 检查必要的组件
+        if (_freeRubiesProfile == null || _freeRubiesShopBox == null)
         {
-            _freeRubiesProfile.Consumed = false;
+            Debug.LogWarning("RefreshFreeRubiesButton: Missing required components");
+            return;
         }
-        _freeRubiesShopBox.SetActive(!_freeRubiesProfile.Consumed);
+
+        try
+        {
+            // 检查是否过了24小时
+            if (_freeRubiesProfile.ConsumedDate?.Time != null &&
+                _freeRubiesProfile.ConsumedDate.Time.AddDays(1.0) < DateTime.UtcNow)
+            {
+                _freeRubiesProfile.Consumed = false;
+                SaveFreeRubiesProfile(); // 保存更新后的状态
+            }
+
+            // 更新按钮状态
+            _freeRubiesShopBox.SetActive(!_freeRubiesProfile.Consumed);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"RefreshFreeRubiesButton error: {ex.Message}");
+        }
     }
 
     private void SaveFreeRubiesProfile()

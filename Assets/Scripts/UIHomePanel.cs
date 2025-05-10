@@ -1,6 +1,5 @@
 using DG.Tweening;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Purchasing;
 using UnityEngine.UI;
@@ -80,7 +79,7 @@ public class UIHomePanel : UIMenu
 	private WorldRenderer _worldRenderer;
 
 	[SerializeField]
-	private TextMeshProUGUI _playButtonPriceText;
+	private Text _playButtonPriceText;
 
 	[SerializeField]
 	private Image _playButtonImage;
@@ -92,10 +91,10 @@ public class UIHomePanel : UIMenu
 	private Slider _keySlider;
 
 	[SerializeField]
-	private TextMeshProUGUI _keyCounterText;
+	private Text _keyCounterText;
 
 	[SerializeField]
-	private TextMeshProUGUI _keyTimerText;
+	private Text _keyTimerText;
 
 	private UIRewardPanel _rewardPopup;
 
@@ -133,7 +132,10 @@ public class UIHomePanel : UIMenu
 			UpdateLootKeys();
 		}
 		App.Instance.NextMenuType = MenuType.Default;
-		_keyTimerText.SetText(string.Empty);
+		if (_keyTimerText != null)
+		{
+			_keyTimerText.text = string.Empty;
+		}
 		_heroBox.Init(_gameController.State.CurrentHero, _gameController.CharacterEvents);
 		_shopPanel.Init(App.Instance.Player.ChestManager);
 		UpdateWorldPrice(_levelManager.LastSelectedWorldId);
@@ -309,7 +311,10 @@ public class UIHomePanel : UIMenu
 	{
 		WorldData worldData = _levelManager.GetWorldData(worldId);
 		bool isUnlocked = worldData.IsUnlocked;
-		_keyTimerText.SetText(string.Empty);
+		if (_keyTimerText != null)
+		{
+			_keyTimerText.text = string.Empty;
+		}
 		_keySlider.gameObject.SetActive(isUnlocked);
 		_keyTimerText.gameObject.SetActive(isUnlocked);
 		UpdateWorldPrice(worldId);
@@ -415,20 +420,47 @@ public class UIHomePanel : UIMenu
 
 	private void UpdateLootKeys()
 	{
+		if (App.Instance?.Player?.LootKeyManager == null)
+		{
+			Debug.LogWarning("LootKeyManager is null in UIHomePanel.UpdateLootKeys");
+			return;
+		}
+
 		int currentAmount = App.Instance.Player.LootKeyManager.GetCurrentAmount();
 		int maxCapacitySoft = App.Instance.Player.LootKeyManager.GetMaxCapacitySoft();
-		_keySlider.value = (float)currentAmount / (float)maxCapacitySoft;
-		_keyCounterText.text = $"{currentAmount}/{maxCapacitySoft}";
+
+		if (_keySlider != null)
+		{
+			_keySlider.value = (float)currentAmount / (float)maxCapacitySoft;
+		}
+
+		if (_keyCounterText != null)
+		{
+			_keyCounterText.text = $"{currentAmount}/{maxCapacitySoft}";
+		}
 	}
 
 	private IEnumerator UpdateKeysTimerCR()
 	{
-		while (!App.Instance.Player.LootKeyManager.IsFull())
+		if (_keyTimerText == null)
 		{
-			_keyTimerText.text = App.Instance.Player.LootKeyManager.GetRemainingTimeBeforeNextKey();
+			Debug.LogWarning("KeyTimerText is null in UIHomePanel.UpdateKeysTimerCR");
+			yield break;
+		}
+
+		while (App.Instance?.Player?.LootKeyManager != null && !App.Instance.Player.LootKeyManager.IsFull())
+		{
+			if (_keyTimerText != null) // 再次检查，因为在协程执行过程中可能会被销毁
+			{
+				_keyTimerText.text = App.Instance.Player.LootKeyManager.GetRemainingTimeBeforeNextKey();
+			}
 			yield return wait;
 		}
-		_keyTimerText.SetText(string.Empty);
+
+		if (_keyTimerText != null)
+		{
+			_keyTimerText.text = string.Empty;
+		}
 	}
 
 	private void OnPlayButtonClicked()

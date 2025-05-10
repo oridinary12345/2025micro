@@ -1,5 +1,4 @@
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,10 +14,10 @@ public class UIMenuGameOverContinue : UIMenuPopup
 	private Slider _progressBar;
 
 	[SerializeField]
-	private TextMeshProUGUI _priceText;
+	private Text _priceText;
 
 	[SerializeField]
-	private TextMeshProUGUI _descriptionText;
+	private Text _descriptionText;
 
 	private Tweener _progressBarTween;
 
@@ -69,8 +68,14 @@ public class UIMenuGameOverContinue : UIMenuPopup
 		_gameOverManager.OfferDeclinedEvent += OnOfferDeclined;
 		LootProfile continuePrice = _gameOverManager.GetContinuePrice();
 		string lootInlineSprite = InlineSprites.GetLootInlineSprite(continuePrice.LootId);
-		_priceText.text = $"{continuePrice.Amount}{lootInlineSprite} CONTINUE";
-		_descriptionText.text = $"Hero HP: +{25}%";
+		if (_priceText != null)
+		{
+			_priceText.text = $"{continuePrice.Amount}{lootInlineSprite} CONTINUE";
+		}
+		if (_descriptionText != null)
+		{
+			_descriptionText.text = $"Hero HP: +{25}%";
+		}
 		bool interactable = App.Instance.Player.LootManager.CanAfford(continuePrice.LootId, continuePrice.Amount);
 		_purchaseContinueButton.interactable = interactable;
 		_purchaseContinueButton.SetDisabledExplanation("You don't have enough rubies");

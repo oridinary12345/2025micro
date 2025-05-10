@@ -38,7 +38,7 @@ public class LocalizedTextMeshPro : MonoBehaviour
             // 确保事件已连接到TextMeshPro组件
             if (localizeEvent.OnUpdateString.GetPersistentEventCount() == 0)
             {
-                UnityEngine.Events.UnityAction<string> setTextAction = new UnityEngine.Events.UnityAction<string>(textComponent.SetText);
+                UnityEngine.Events.UnityAction<string> setTextAction = new UnityEngine.Events.UnityAction<string>((text) => textComponent.text = text);
                 localizeEvent.OnUpdateString.AddListener(setTextAction);
             }
         }

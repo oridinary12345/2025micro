@@ -14,6 +14,12 @@ public class LocalizedFontSwitcher : MonoBehaviour
     {
         public string localeCode;
         public TMP_FontAsset font;
+        public Material material;  // 可选的自定义材质
+        
+        public Material GetMaterial()
+        {
+            return material != null ? material : (font != null ? font.material : null);
+        }
     }
 
     [Header("字体设置")]
@@ -119,13 +125,35 @@ public class LocalizedFontSwitcher : MonoBehaviour
     private void ApplyFontToTargets(TMP_FontAsset font)
     {
         if (font == null)
+        {
+            Debug.LogWarning("[LocalizedFontSwitcher] 尝试应用空字体资源");
             return;
+        }
+
+        // 获取当前语言的字体配置
+        string currentLocaleCode = LocalizationSettings.SelectedLocale?.Identifier.Code;
+        LocalizedFont localizedFont = localizedFonts.Find(f => f.localeCode == currentLocaleCode);
+        Material material = localizedFont?.GetMaterial() ?? font.material;
 
         foreach (var text in targetTexts)
         {
             if (text != null)
             {
-                text.font = font;
+                try
+                {
+                    // 应用字体资源
+                    text.font = font;
+                    
+                    // 应用材质（如果有自定义材质）
+                    if (material != null && material != text.fontMaterial)
+                    {
+                        text.fontMaterial = material;
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError($"[LocalizedFontSwitcher] 应用字体时出错: {e.Message}");
+                }
             }
         }
     }

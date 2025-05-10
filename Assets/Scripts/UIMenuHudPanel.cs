@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIMenuHudPanel : MonoBehaviour
@@ -13,7 +14,7 @@ public class UIMenuHudPanel : MonoBehaviour
 	private UIGameButton _languageButton;
 
 	[SerializeField]
-	private TextMeshProUGUI _languageText;
+	private Text _languageText;
 
 	private void Awake()
 	{
@@ -22,8 +23,16 @@ public class UIMenuHudPanel : MonoBehaviour
 		{
 			componentInChildren.Init();
 		}
-		_coinsBar.Init("lootCoin");
-		_rubyBar.Init("lootRuby");
+
+		if (_coinsBar != null)
+		{
+			_coinsBar.Init("lootCoin");
+		}
+
+		if (_rubyBar != null)
+		{
+			_rubyBar.Init("lootRuby");
+		}
 
 		// 初始化语言按钮
 		if (_languageButton != null)
@@ -40,9 +49,13 @@ public class UIMenuHudPanel : MonoBehaviour
 	{
 		// 显示语言选择面板
 		var languagePanel = FindObjectOfType<UIMenuChooseLanguagePanel>();
-		if (languagePanel != null)
+		if (languagePanel != null && UIMenuStack.Instance != null)
 		{
 			UIMenuStack.Instance.Push(languagePanel);
+		}
+		else
+		{
+			Debug.LogWarning("Language panel or UIMenuStack.Instance is null");
 		}
 	}
 
@@ -55,7 +68,15 @@ public class UIMenuHudPanel : MonoBehaviour
 		{
 			// 显示当前语言
 			string currentLanguage = LocalizationHelper.CurrentLanguage;
-			_languageText.text = currentLanguage;
+			if (!string.IsNullOrEmpty(currentLanguage))
+			{
+				_languageText.text = currentLanguage;
+			}
+			else
+			{
+				_languageText.text = "Unknown";
+				Debug.LogWarning("Current language is null or empty");
+			}
 		}
 	}
 }

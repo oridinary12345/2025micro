@@ -9,7 +9,7 @@ using UnityEngine.Localization.Settings;
 public class UnityLocalizationInitializer : MonoBehaviour
 {
     [SerializeField]
-    private string defaultLanguage = "en";
+    private string defaultLanguage = "zh-Hans";  // 默认使用简体中文
     
     [SerializeField]
     private bool initializeOnAwake = true;
@@ -36,15 +36,24 @@ public class UnityLocalizationInitializer : MonoBehaviour
         // 从玩家设置中获取语言设置
         string savedLanguage = GetSavedLanguage();
         
-        // 设置语言
-        if (!string.IsNullOrEmpty(savedLanguage))
+        // 如果没有保存的语言设置，或者保存的是英语，则使用中文
+        if (string.IsNullOrEmpty(savedLanguage) || savedLanguage == "en")
         {
-            SetLanguage(savedLanguage);
+            // 检查是否支持简体中文
+            var chineseLocale = LocalizationSettings.AvailableLocales.GetLocale("zh-Hans");
+            if (chineseLocale != null)
+            {
+                SetLanguage("zh-Hans");
+            }
+            else
+            {
+                Debug.LogWarning("简体中文语言包不可用，使用默认语言");
+                SetLanguage(defaultLanguage);
+            }
         }
         else
         {
-            // 使用默认语言
-            SetLanguage(defaultLanguage);
+            SetLanguage(savedLanguage);
         }
         
         // 打印调试信息

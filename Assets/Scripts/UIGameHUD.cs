@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,10 +19,10 @@ public class UIGameHUD : MonoBehaviour
 	private UILevelWavesBar _waveBar;
 
 	[SerializeField]
-	private TextMeshProUGUI _comboText;
+	private Text _comboText;
 
 	[SerializeField]
-	private TextMeshProUGUI _levelStateText;
+	private Text _levelStateText;
 
 	[SerializeField]
 	private UIGameButton _pauseButton;
@@ -84,26 +83,6 @@ public class UIGameHUD : MonoBehaviour
 		if (gameEvents == null)
 		{
 			UnityEngine.Debug.LogWarning("UIGameHUD.Init() gameEvents == null!");
-		}
-		if (_introPanel == null)
-		{
-			UnityEngine.Debug.LogWarning("UIGameHUD.Init() _introPanel == null!");
-		}
-		if (_waveBar == null)
-		{
-			UnityEngine.Debug.LogWarning("UIGameHUD.Init() _waveBar == null!");
-		}
-		if (_weaponStatusPanel == null)
-		{
-			UnityEngine.Debug.LogWarning("UIGameHUD.Init() _weaponStatusPanel == null!");
-		}
-		if (_pauseButton == null)
-		{
-			UnityEngine.Debug.LogWarning("UIGameHUD.Init() _pauseButton == null!");
-		}
-		if (_debugHUD == null)
-		{
-			UnityEngine.Debug.LogWarning("UIGameHUD.Init() _debugHUD == null!");
 		}
 		_characterEvents = characterEvents;
 		_levelData = level;
@@ -250,26 +229,25 @@ public class UIGameHUD : MonoBehaviour
 
 	private void OnComboUpdated(int comboCount)
 	{
-		if (comboCount > 1)
+		if (_comboText != null)
 		{
-			_comboText.text = "Combo x" + comboCount;
-			int num = 36 + Mathf.Min(comboCount, 10) * 2;
-			int num2 = (!_comboText.enabled) ? 10 : num;
-			_comboText.fontSize = num2;
-			_comboText.enabled = true;
-			Sequence sequence = DOTween.Sequence();
-			sequence.Append(_comboText.DOFontSize(num + 10, 0.08f).SetEase(Ease.OutBounce));
-			sequence.Append(_comboText.DOFontSize(num, 0.08f).SetEase(Ease.InBounce).SetDelay(0.2f));
-			sequence.Play();
-		}
-		else
-		{
-			_comboText.enabled = false;
+			if (comboCount > 1)
+			{
+				_comboText.text = "Combo x" + comboCount;
+				_comboText.gameObject.SetActive(true);
+			}
+			else
+			{
+				_comboText.gameObject.SetActive(false);
+			}
 		}
 	}
 
 	private void OnRoundEnded()
 	{
-		_weaponSelector.OnRoundEnded();
+		if (_weaponSelector != null)
+		{
+			_weaponSelector.OnRoundEnded();
+		}
 	}
 }

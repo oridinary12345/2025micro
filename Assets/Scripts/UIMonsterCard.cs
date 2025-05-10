@@ -1,5 +1,4 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,16 +13,16 @@ public class UIMonsterCard : MonoBehaviour
 	private Image _monsterImage;
 
 	[SerializeField]
-	private TextMeshProUGUI _levelText;
+	private Text _levelText;
 
 	[SerializeField]
-	private TextMeshProUGUI _coinsPaymentText;
+	private Text _coinsPaymentText;
 
 	[SerializeField]
-	private TextMeshProUGUI _awakenTimerText;
+	private Text _awakenTimerText;
 
 	[SerializeField]
-	private TextMeshProUGUI _monsterCountText;
+	private Text _monsterCountText;
 
 	[SerializeField]
 	private Slider _monsterCountSlider;
@@ -114,11 +113,20 @@ public class UIMonsterCard : MonoBehaviour
 	private void UpdateContent()
 	{
 		_overlayImage.enabled = _museumData.IsSleeping();
-		_monsterCountText.text = _museumData.CurrentMonsterKilledCount.ToString();
+		if (_monsterCountText != null)
+		{
+			_monsterCountText.text = _museumData.CurrentMonsterKilledCount.ToString();
+		}
 		_monsterCountSlider.value = _museumData.MonsterKilledObjective01;
-		_coinsPaymentText.text = "+" + _museumData.GetPaymentAmout();
+		if (_coinsPaymentText != null)
+		{
+			_coinsPaymentText.text = "+" + _museumData.GetPaymentAmout();
+		}
 		_paymentTimerSlider.value = _museumData.GetPaymentProgress01();
-		_levelText.text = ((!_museumData.HasReachLevelMax()) ? ("LVL " + (_museumData.Level + 1)) : "MAX");
+		if (_levelText != null)
+		{
+			_levelText.text = ((!_museumData.HasReachLevelMax()) ? ("LVL " + (_museumData.Level + 1)) : "MAX");
+		}
 		_monsterImage.sprite = Resources.Load<Sprite>("Monsters/" + _museumData.Config.Id);
 		UpdateTimer();
 	}
@@ -132,7 +140,10 @@ public class UIMonsterCard : MonoBehaviour
 		}
 		if (_museumData.IsSleeping())
 		{
-			_awakenTimerText.text = string.Empty;
+			if (_awakenTimerText != null)
+			{
+				_awakenTimerText.text = string.Empty;
+			}
 		}
 		else
 		{
@@ -144,11 +155,17 @@ public class UIMonsterCard : MonoBehaviour
 	{
 		while (!_museumData.IsSleeping())
 		{
-			_awakenTimerText.text = _museumData.GetTimeBeforeSleep();
+			if (_awakenTimerText != null)
+			{
+				_awakenTimerText.text = _museumData.GetTimeBeforeSleep();
+			}
 			_paymentTimerSlider.value = _museumData.GetPaymentProgress01();
 			yield return _wait;
 		}
-		_awakenTimerText.SetText(string.Empty);
+		if (_awakenTimerText != null)
+		{
+			_awakenTimerText.text = string.Empty;
+		}
 		_timerCR = null;
 		yield return null;
 		UpdateContent();

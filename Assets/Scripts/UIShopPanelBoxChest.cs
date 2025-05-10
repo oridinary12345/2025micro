@@ -1,29 +1,28 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIShopPanelBoxChest : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI _cardAmountText;
+	private Text _cardAmountText;
 
 	[SerializeField]
-	private TextMeshProUGUI _reward1Text;
+	private Text _reward1Text;
 
 	[SerializeField]
-	private TextMeshProUGUI _reward2Text;
+	private Text _reward2Text;
 
 	[SerializeField]
-	private TextMeshProUGUI _priceText;
+	private Text _priceText;
 
 	[SerializeField]
-	private TextMeshProUGUI _claimText;
+	private Text _claimText;
 
 	[SerializeField]
-	private TextMeshProUGUI _timerText;
+	private Text _timerText;
 
 	[SerializeField]
 	private Image _productImage;
@@ -78,10 +77,22 @@ public class UIShopPanelBoxChest : MonoBehaviour
 	public void UpdateContent()
 	{
 		LootProfile price = _chestData.GetPrice();
-		_claimText.text = "CLAIM!";
-		_claimText.enabled = (!price.IsValid() && _chestData.IsReadyForRedeem());
-		_priceText.text = ((price.Amount > 0) ? (price.Amount + InlineSprites.GetLootInlineSprite(price.LootId)) : string.Empty);
-		_priceText.enabled = price.IsValid();
+		if (_claimText != null)
+		{
+			_claimText.text = "CLAIM!";
+		}
+		if (_claimText != null)
+		{
+			_claimText.enabled = (!price.IsValid() && _chestData.IsReadyForRedeem());
+		}
+		if (_priceText != null)
+		{
+			_priceText.text = ((price.Amount > 0) ? (price.Amount + InlineSprites.GetLootInlineSprite(price.LootId)) : string.Empty);
+		}
+		if (_priceText != null)
+		{
+			_priceText.enabled = price.IsValid();
+		}
 		_badge.SetVisible(!price.IsValid() && _chestData.IsReadyForRedeem(), true);
 		if (!price.IsValid() && !_chestData.IsReadyForRedeem())
 		{
@@ -119,6 +130,13 @@ public class UIShopPanelBoxChest : MonoBehaviour
 
 	private void UpdateRewardText()
 	{
+		// 检查所有文本组件
+		if (_cardAmountText == null || _reward1Text == null || _reward2Text == null)
+		{
+			Debug.LogWarning("UpdateRewardText: Some text components are missing");
+			return;
+		}
+
 		_cardAmountText.text = string.Empty;
 		_reward1Text.text = string.Empty;
 		_reward2Text.text = string.Empty;
@@ -188,15 +206,24 @@ public class UIShopPanelBoxChest : MonoBehaviour
 		}
 		if (mergedRewards.ContainsKey("cards"))
 		{
-			_cardAmountText.text = string.Format("×{0}", mergedRewards["cards"].ToString());
+			if (_cardAmountText != null)
+			{
+				_cardAmountText.text = string.Format("×{0}", mergedRewards["cards"].ToString());
+			}
 		}
 		if (mergedRewards.ContainsKey("lootCoin"))
 		{
-			_reward1Text.text = InlineSprites.GetLootInlineSprite("lootCoin") + " " + mergedRewards["lootCoin"].ToString("### ### ###").Trim();
+			if (_reward1Text != null)
+			{
+				_reward1Text.text = InlineSprites.GetLootInlineSprite("lootCoin") + " " + mergedRewards["lootCoin"].ToString("### ### ###").Trim();
+			}
 		}
 		if (mergedRewards.ContainsKey("lootRuby"))
 		{
-			_reward2Text.text = InlineSprites.GetLootInlineSprite("lootRuby") + " " + mergedRewards["lootRuby"].ToString("### ### ###").Trim();
+			if (_reward2Text != null)
+			{
+				_reward2Text.text = InlineSprites.GetLootInlineSprite("lootRuby") + " " + mergedRewards["lootRuby"].ToString("### ### ###").Trim();
+			}
 		}
 	}
 
@@ -238,10 +265,16 @@ public class UIShopPanelBoxChest : MonoBehaviour
 	{
 		while (_chestData.IsTimerActive())
 		{
-			_timerText.text = _chestData.GetTimeBeforeRedeem();
+			if (_timerText != null)
+			{
+				_timerText.text = _chestData.GetTimeBeforeRedeem();
+			}
 			yield return _wait;
 		}
-		_timerText.SetText(string.Empty);
+		if (_timerText != null)
+		{
+			_timerText.text = string.Empty;
+		}
 		_timerCR = null;
 		yield return null;
 		UpdateContent();

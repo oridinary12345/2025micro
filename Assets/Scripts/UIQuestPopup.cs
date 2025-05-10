@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIQuestPopup : UIMenuPopup
 {
 	[SerializeField]
-	private TextMeshProUGUI _newQuestTimer;
+	private Text _newQuestTimer;
 
 	[SerializeField]
 	private UIGameButton _buttonClose;
@@ -21,10 +22,10 @@ public class UIQuestPopup : UIMenuPopup
 	private string _worldId;
 
 	[SerializeField]
-	private TextMeshProUGUI _coinAmountText;
+	private Text _coinAmountText;
 
 	[SerializeField]
-	private TextMeshProUGUI _cardsAmountText;
+	private Text _cardsAmountText;
 
 	[SerializeField]
 	private UIGameButton _rewardInfoButton;

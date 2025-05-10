@@ -1,18 +1,17 @@
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIWeaponsPanelBox : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI _levelLabel;
+	private Text _levelLabel;
 
 	[SerializeField]
-	private TextMeshProUGUI _damageLabel;
+	private Text _damageLabel;
 
 	[SerializeField]
-	private TextMeshProUGUI _hpLabel;
+	private Text _hpLabel;
 
 	[SerializeField]
 	private Image _weaponImage;
@@ -30,10 +29,10 @@ public class UIWeaponsPanelBox : MonoBehaviour
 	private GameObject _statsPanel;
 
 	[SerializeField]
-	private TextMeshProUGUI _lockedIconText;
+	private Text _lockedIconText;
 
 	[SerializeField]
-	private TextMeshProUGUI _lockedText;
+	private Text _lockedText;
 
 	[SerializeField]
 	private Slider _hpSlider;
@@ -54,7 +53,7 @@ public class UIWeaponsPanelBox : MonoBehaviour
 	private GameObject _cardIcons;
 
 	[SerializeField]
-	private TextMeshProUGUI _cardProgressText;
+	private Text _cardProgressText;
 
 	[SerializeField]
 	private UIGradient _weaponBackgroundGradient;

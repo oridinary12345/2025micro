@@ -76,7 +76,21 @@ public static class LocalizationHelper
         if (App.Instance != null && App.Instance.Player != null && App.Instance.Player.SettingsManager != null)
         {
             string savedLanguage = App.Instance.Player.SettingsManager.Language;
-            if (!string.IsNullOrEmpty(savedLanguage))
+            
+            // 如果没有保存的语言设置，或者保存的是英语，则使用中文
+            if (string.IsNullOrEmpty(savedLanguage) || savedLanguage == "English")
+            {
+                if (HasLanguage("Chinese (Simplified)"))
+                {
+                    SetLanguage("Chinese (Simplified)");
+                    if (App.Instance.Player.SettingsManager != null)
+                    {
+                        App.Instance.Player.SettingsManager.Language = "Chinese (Simplified)";
+                    }
+                    return;
+                }
+            }
+            else if (!string.IsNullOrEmpty(savedLanguage))
             {
                 // 将SystemLanguage转换为Unity本地化系统的语言名称
                 string unityLocalizationLanguage = ConvertToUnityLocalizationLanguage(savedLanguage);
@@ -87,6 +101,16 @@ public static class LocalizationHelper
                     SetLanguage(unityLocalizationLanguage);
                     return;
                 }
+            }
+        }
+
+        // 如果没有设置语言，默认使用中文
+        if (HasLanguage("Chinese (Simplified)"))
+        {
+            SetLanguage("Chinese (Simplified)");
+            if (App.Instance?.Player?.SettingsManager != null)
+            {
+                App.Instance.Player.SettingsManager.Language = "Chinese (Simplified)";
             }
         }
 

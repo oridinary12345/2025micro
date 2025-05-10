@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +22,7 @@ public class UIWorldPage : MonoBehaviour
 	private UIBadge _questBadge;
 
 	[SerializeField]
-	private TextMeshProUGUI _nextWorldUnlockCompletionText;
+	private Text _nextWorldUnlockCompletionText;
 
 	[SerializeField]
 	private UIBadge _nextWorldBadge;
@@ -169,8 +169,14 @@ public class UIWorldPage : MonoBehaviour
 
 	private void ShowNextWorldButton()
 	{
+		if (_nextWorldButton == null || _nextWorldButton.gameObject == null)
+		{
+			Debug.LogWarning("NextWorldButton is null in UIWorldPage");
+			return;
+		}
+
 		UpdateNextWorldButtonText();
-		_nextWorldButton.gameObject.SetActive( true);
+		_nextWorldButton.gameObject.SetActive(true);
 	}
 
 	private void HideNextWorldButton()
@@ -180,22 +186,45 @@ public class UIWorldPage : MonoBehaviour
 
 	private void UpdateNextWorldButtonText()
 	{
-		WorldData nextLockedWorldData = App.Instance.Player.LevelManager.GetNextLockedWorldData();
-		if (nextLockedWorldData.Config.IsValid())
+		if (_nextWorldUnlockCompletionText == null)
+		{
+			Debug.LogWarning("NextWorldUnlockCompletionText is null in UIWorldPage");
+			return;
+		}
+
+		WorldData nextLockedWorldData = App.Instance.Player?.LevelManager?.GetNextLockedWorldData();
+		if (nextLockedWorldData != null && nextLockedWorldData.Config != null && nextLockedWorldData.Config.IsValid())
 		{
 			_nextWorldUnlockCompletionText.text = Mathf.FloorToInt(nextLockedWorldData.GetUnlockCompletion01() * 100f) + "%";
+		}
+		else
+		{
+			_nextWorldUnlockCompletionText.text = "0%";
 		}
 	}
 
 	private void UpdateNextWorldButtonState()
 	{
-		if (IsNextWorldLocked())
+		if (_nextWorldButton == null)
 		{
-			ShowNextWorldButton();
+			Debug.LogWarning("NextWorldButton is null in UIWorldPage");
+			return;
 		}
-		else
+
+		try
 		{
-			HideNextWorldButton();
+			if (IsNextWorldLocked())
+			{
+				ShowNextWorldButton();
+			}
+			else
+			{
+				HideNextWorldButton();
+			}
+		}
+		catch (Exception e)
+		{
+			Debug.LogError($"Error in UpdateNextWorldButtonState: {e.Message}");
 		}
 	}
 

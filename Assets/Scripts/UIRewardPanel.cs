@@ -1,19 +1,18 @@
 using DG.Tweening;
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIRewardPanel : UIMenu
 {
 	[SerializeField]
-	private TextMeshProUGUI _titleText;
+	private Text _titleText;
 
 	[SerializeField]
-	private TextMeshProUGUI _itemText;
+	private Text _itemText;
 
 	[SerializeField]
-	private TextMeshProUGUI _amountText;
+	private Text _amountText;
 
 	[SerializeField]
 	private Image _itemImage;
@@ -149,14 +148,20 @@ public class UIRewardPanel : UIMenu
 			text = config3.Name;
 			_cardCountTarget = rewardHero.CardCount;
 		}
-		_titleText.text = text.ToUpper();
-		TextMeshProUGUI[] componentsInChildren = _titleText.transform.GetComponentsInChildren<TextMeshProUGUI>();
-		foreach (TextMeshProUGUI textMeshProUGUI in componentsInChildren)
+		if (_titleText != null)
 		{
-			textMeshProUGUI.text = text.ToUpper();
-			if (_titleText != textMeshProUGUI)
+			_titleText.text = text.ToUpper();
+			Text[] texts = _titleText.transform.GetComponentsInChildren<Text>();
+			foreach (Text textComponent in texts)
 			{
-				textMeshProUGUI.color = color;
+				if (textComponent != null)
+				{
+					textComponent.text = text.ToUpper();
+					if (_titleText != textComponent)
+					{
+						textComponent.color = color;
+					}
+				}
 			}
 		}
 		if (!string.IsNullOrEmpty(_itemText.text))

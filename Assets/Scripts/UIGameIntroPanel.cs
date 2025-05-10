@@ -1,6 +1,5 @@
 using DG.Tweening;
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,10 +27,16 @@ public class UIGameIntroPanel : MonoBehaviour
 	private Image _keyOverlay;
 
 	[SerializeField]
+	private Text _titleText;
+
+	[SerializeField]
+	private Text _descriptionText;
+
+	[SerializeField]
 	private Animator _chestAnimator;
 
 	[SerializeField]
-	private TextMeshProUGUI _waveCountText;
+	private Text _waveCountText;
 
 	private bool _isAnimOver;
 
@@ -40,21 +45,53 @@ public class UIGameIntroPanel : MonoBehaviour
 	private void Awake()
 	{
 		_introTween = DOTween.Sequence();
-		_topText.GetComponent<TextMeshProUGUI>().enabled = false;
-		_bottomText.GetComponent<TextMeshProUGUI>().enabled = false;
+		if (_topText != null)
+		{
+			_topText.GetComponent<Text>().enabled = false;
+		}
+
+		if (_bottomText != null)
+		{
+			_bottomText.GetComponent<Text>().enabled = false;
+		}
+
 		_waveCountBox.gameObject.SetActive( false);
 		_key.gameObject.SetActive( false);
 	}
 
 	public void SetWaveCount(int waveCount)
 	{
-		_waveCountText.text = waveCount + " WAVES";
+		if (_waveCountText != null)
+		{
+			_waveCountText.text = waveCount + " WAVES";
+		}
+	}
+
+	public void Init(string title, string description)
+	{
+		if (_titleText != null)
+		{
+			_titleText.text = title;
+		}
+
+		if (_descriptionText != null)
+		{
+			_descriptionText.text = description;
+		}
 	}
 
 	public void StartAnim(bool canUnlockChest)
 	{
-		_topText.GetComponent<TextMeshProUGUI>().enabled = true;
-		_bottomText.GetComponent<TextMeshProUGUI>().enabled = true;
+		if (_topText != null)
+		{
+			_topText.GetComponent<Text>().enabled = true;
+		}
+
+		if (_bottomText != null)
+		{
+			_bottomText.GetComponent<Text>().enabled = true;
+		}
+
 		_waveCountBox.gameObject.SetActive( true);
 		Vector2 anchoredPosition = _topText.anchoredPosition;
 		float defaulTopTextX = anchoredPosition.x;

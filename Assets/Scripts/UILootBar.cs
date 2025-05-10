@@ -1,15 +1,14 @@
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UILootBar : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI _lootAmountText;
+	private Text _lootAmountText;
 
 	[SerializeField]
-	private TextMeshProUGUI _lootGenerationAmountText;
+	private Text _lootGenerationAmountText;
 
 	[SerializeField]
 	private Image _lootIcon;
@@ -24,16 +23,38 @@ public class UILootBar : MonoBehaviour
 
 	public void Init(string lootId)
 	{
+		if (string.IsNullOrEmpty(lootId))
+		{
+			Debug.LogWarning("LootId is null or empty in UILootBar.Init");
+			return;
+		}
+
 		_lootId = lootId;
-		_lootIcon.sprite = Resources.Load<Sprite>("UI/" + lootId);
+
+		if (_lootIcon != null)
+		{
+			_lootIcon.sprite = Resources.Load<Sprite>("UI/" + lootId);
+		}
+
+		if (App.Instance?.Player?.LootManager == null)
+		{
+			Debug.LogWarning("LootManager is null in UILootBar.Init");
+			return;
+		}
+
 		int amount = App.Instance.Player.LootManager.GetLoot(_lootId).Amount;
-		_lootAmountText.text = ((amount != 0) ? amount.ToString("### ### ###") : "0");
+		if (_lootAmountText != null)
+		{
+			_lootAmountText.text = ((amount != 0) ? amount.ToString("### ### ###") : "0");
+		}
+
 		_lastTargetAmount = amount;
 		UpdateLootGenerator();
 		RegisterEvents();
+
 		if (_lootGenerationAmountText != null)
 		{
-			_lootGenerationAmountText.gameObject.SetActive( false);
+			_lootGenerationAmountText.gameObject.SetActive(false);
 		}
 	}
 
@@ -95,7 +116,10 @@ public class UILootBar : MonoBehaviour
 				amount = x;
 			}, amount2, 0.2f).OnUpdate(delegate
 			{
-				_lootAmountText.text = ((amount != 0) ? amount.ToString("### ### ###") : "0");
+				if (_lootAmountText != null)
+				{
+					_lootAmountText.text = ((amount != 0) ? amount.ToString("### ### ###") : "0");
+				}
 			});
 			if (_amountTextSequence == null)
 			{
@@ -110,13 +134,25 @@ public class UILootBar : MonoBehaviour
 			if (_animationTween == null)
 			{
 				_animationTween = DOTween.Sequence();
-				_animationTween.Insert(0f, _lootIcon.rectTransform.DOPunchScale(Vector3.one * 0.3f, 0.2f));
-				_animationTween.Insert(0f, _lootAmountText.rectTransform.DOPunchScale(Vector3.one * 0.3f, 0.2f));
+				if (_lootIcon != null)
+				{
+					_animationTween.Insert(0f, _lootIcon.rectTransform.DOPunchScale(Vector3.one * 0.3f, 0.2f));
+				}
+				if (_lootAmountText != null)
+				{
+					_animationTween.Insert(0f, _lootAmountText.rectTransform.DOPunchScale(Vector3.one * 0.3f, 0.2f));
+				}
 				_animationTween.SetDelay(0.3f);
 				_animationTween.OnComplete(delegate
 				{
-					_lootIcon.rectTransform.localScale = Vector3.one;
-					_lootAmountText.rectTransform.localScale = Vector3.one;
+					if (_lootIcon != null)
+					{
+						_lootIcon.rectTransform.localScale = Vector3.one;
+					}
+					if (_lootAmountText != null)
+					{
+						_lootAmountText.rectTransform.localScale = Vector3.one;
+					}
 					_animationTween = null;
 				});
 			}

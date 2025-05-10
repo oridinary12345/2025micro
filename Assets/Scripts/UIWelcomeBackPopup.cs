@@ -1,5 +1,5 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIWelcomeBackPopup : UIMenuPopup
 {
@@ -7,7 +7,7 @@ public class UIWelcomeBackPopup : UIMenuPopup
 	private UIGameButton _closeButton;
 
 	[SerializeField]
-	private TextMeshProUGUI _cashEarnedText;
+	private Text _cashEarnedText;
 
 	public static UIWelcomeBackPopup Create(LootProfile lootEarned)
 	{
@@ -26,6 +26,13 @@ public class UIWelcomeBackPopup : UIMenuPopup
 
 	private void Init(LootProfile lootEarned)
 	{
-		_cashEarnedText.text = "+" + lootEarned.ToString();
+		if (_cashEarnedText != null)
+		{
+			_cashEarnedText.text = "+" + lootEarned.ToString();
+		}
+		else
+		{
+			Debug.LogWarning("Init: Missing cash earned text component");
+		}
 	}
 }

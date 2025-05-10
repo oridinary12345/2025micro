@@ -1,23 +1,22 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIHeroesPanelBox : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI _titleLabel;
+	private Text _titleLabel;
 
 	[SerializeField]
-	private TextMeshProUGUI _hpLabel;
+	private Text _hpLabel;
 
 	[SerializeField]
-	private TextMeshProUGUI _levelLabel;
+	private Text _levelLabel;
 
 	[SerializeField]
 	private Image _heroImage;
 
 	[SerializeField]
-	private TextMeshProUGUI _cardProgressText;
+	private Text _cardProgressText;
 
 	[SerializeField]
 	private Slider _cardSlider;
@@ -38,12 +37,21 @@ public class UIHeroesPanelBox : MonoBehaviour
 		if (_hero != null)
 		{
 			_hero.Events.HeroLevelUpEvent += OnHeroLevelUp;
+
+			if (_heroImage != null)
+			{
+				_heroImage.sprite = Resources.Load<Sprite>("Heroes/UI_" + _hero.HeroConfig.Id);
+			}
+
+			if (_titleLabel != null)
+			{
+				_titleLabel.text = _hero.HeroConfig.Name;
+			}
+
+			UpdateHeroStats();
+			UpdateCardsInfo();
+			UpdateUpgradeBadge();
 		}
-		_heroImage.sprite = Resources.Load<Sprite>("Heroes/UI_" + _hero.HeroConfig.Id);
-		_titleLabel.text = _hero.HeroConfig.Name;
-		UpdateHeroStats();
-		UpdateCardsInfo();
-		UpdateUpgradeBadge();
 		return this;
 	}
 
@@ -122,13 +130,39 @@ public class UIHeroesPanelBox : MonoBehaviour
 
 	private void UpdateHeroStats()
 	{
-		_hpLabel.text = "<sprite=1>" + ((_hero == null) ? _hero.HeroConfig.HpMaxBase : _hero.HeroConfig.GetHPMax(_hero.Profile.Level)).ToString();
-		_levelLabel.text = "Lv. " + ((_hero == null) ? "1" : _hero.Profile.Level.ToString());
+		if (_hero == null)
+		{
+			Debug.LogWarning("Hero is null in UIHeroesPanelBox.UpdateHeroStats");
+			return;
+		}
+
+		if (_hpLabel != null)
+		{
+			_hpLabel.text = "<sprite=1>" + _hero.HeroConfig.GetHPMax(_hero.Profile.Level).ToString();
+		}
+
+		if (_levelLabel != null)
+		{
+			_levelLabel.text = "Lv. " + _hero.Profile.Level.ToString();
+		}
 	}
 
 	private void UpdateCardsInfo()
 	{
-		_cardSlider.value = _hero.NextLevelObjective01;
-		_cardProgressText.text = _hero.NextLevelProgressString;
+		if (_hero == null)
+		{
+			Debug.LogWarning("Hero is null in UIHeroesPanelBox.UpdateCardsInfo");
+			return;
+		}
+
+		if (_cardSlider != null)
+		{
+			_cardSlider.value = _hero.NextLevelObjective01;
+		}
+
+		if (_cardProgressText != null)
+		{
+			_cardProgressText.text = _hero.NextLevelProgressString;
+		}
 	}
 }

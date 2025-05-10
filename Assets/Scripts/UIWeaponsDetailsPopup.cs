@@ -1,22 +1,24 @@
 using DG.Tweening;
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIWeaponsDetailsPopup : UIMenuPopup
 {
 	[SerializeField]
-	private TextMeshProUGUI _title;
+	private Text _title;
 
 	[SerializeField]
-	private TextMeshProUGUI _levelText;
+	private Text _levelText;
 
 	[SerializeField]
-	private TextMeshProUGUI _damageText;
+	private Text _damageText;
 
 	[SerializeField]
-	private TextMeshProUGUI _damageBonusText;
+	private Text _damageBonusText;
+
+	[SerializeField]
+	private Text _hpBonusText;
 
 	[SerializeField]
 	private GameObject _upgradeArrowLevel;
@@ -28,10 +30,7 @@ public class UIWeaponsDetailsPopup : UIMenuPopup
 	private GameObject _upgradeArrowHP;
 
 	[SerializeField]
-	private TextMeshProUGUI _hpText;
-
-	[SerializeField]
-	private TextMeshProUGUI _hpBonusText;
+	private Text _hpText;
 
 	[SerializeField]
 	private Image _weaponImage;
@@ -40,22 +39,22 @@ public class UIWeaponsDetailsPopup : UIMenuPopup
 	private Image _weaponShapeImage;
 
 	[SerializeField]
-	private TextMeshProUGUI _weaponShapeText;
+	private Text _weaponShapeText;
 
 	[SerializeField]
 	private UIGameButton _buttonUpgrade;
 
 	[SerializeField]
-	private TextMeshProUGUI _buttonUpgradeText;
+	private Text _buttonUpgradeText;
 
 	[SerializeField]
-	private TextMeshProUGUI _buttonUpgradePriceText;
+	private Text _buttonUpgradePriceText;
 
 	[SerializeField]
 	private UIGameButton _buttonEquip;
 
 	[SerializeField]
-	private TextMeshProUGUI _buttonEquipText;
+	private Text _buttonEquipText;
 
 	[SerializeField]
 	private UIGameButton _buttonClose;
@@ -64,7 +63,7 @@ public class UIWeaponsDetailsPopup : UIMenuPopup
 	private Slider _cardSlider;
 
 	[SerializeField]
-	private TextMeshProUGUI _cardProgressText;
+	private Text _cardProgressText;
 
 	private WeaponConfig _weaponConfig;
 
@@ -230,28 +229,47 @@ public class UIWeaponsDetailsPopup : UIMenuPopup
 
 	private void UpdateButtons()
 	{
-		_buttonUpgradeText.text = "UPGRADE";
-		_buttonEquipText.text = "EQUIP";
-		if (_weaponData.HasReachMaxLevel)
+		if (_buttonUpgradeText != null)
 		{
-			_buttonUpgradePriceText.text = "MAXED";
-			_buttonUpgrade.interactable = false;
-			_buttonUpgrade.SetDisabledExplanation("Max level reached!");
+			_buttonUpgradeText.text = "UPGRADE";
 		}
-		else
+
+		if (_buttonEquipText != null)
 		{
-			int levelUpPriceAmount = _weaponData.GetLevelUpPriceAmount();
-			_buttonUpgradePriceText.text = levelUpPriceAmount.ToString("### ### ###").Trim() + InlineSprites.GetLootInlineSprite("lootCoin");
-			_buttonUpgrade.interactable = _weaponData.CardObjectiveReached;
-			_buttonUpgrade.SetDisabledExplanation("You need more cards");
-			if (_weaponData.CardObjectiveReached)
+			_buttonEquipText.text = "EQUIP";
+		}
+
+		if (_buttonUpgradePriceText != null)
+		{
+			if (_weaponData.HasReachMaxLevel)
 			{
-				_buttonUpgrade.interactable = CanAfford();
-				_buttonUpgrade.SetDisabledExplanation("You don't have enough coins!");
+				_buttonUpgradePriceText.text = "MAXED";
+				_buttonUpgrade.interactable = false;
+				_buttonUpgrade.SetDisabledExplanation("Max level reached!");
+			}
+			else
+			{
+				int levelUpPriceAmount = _weaponData.GetLevelUpPriceAmount();
+				_buttonUpgradePriceText.text = levelUpPriceAmount.ToString("### ### ###").Trim() + InlineSprites.GetLootInlineSprite("lootCoin");
+				_buttonUpgrade.interactable = _weaponData.CardObjectiveReached;
+				_buttonUpgrade.SetDisabledExplanation("You need more cards");
+				if (_weaponData.CardObjectiveReached)
+				{
+					_buttonUpgrade.interactable = CanAfford();
+					_buttonUpgrade.SetDisabledExplanation("You don't have enough coins!");
+				}
 			}
 		}
-		_damageBonusText.color = ((!CanUpgrade()) ? "#C6AA94FF".ToColor() : "#FF4364FF".ToColor());
-		_hpBonusText.color = ((!CanUpgrade()) ? "#C6AA94FF".ToColor() : "#FF4364FF".ToColor());
+
+		if (_damageBonusText != null)
+		{
+			_damageBonusText.color = ((!CanUpgrade()) ? "#C6AA94FF".ToColor() : "#FF4364FF".ToColor());
+		}
+
+		if (_hpBonusText != null)
+		{
+			_hpBonusText.color = ((!CanUpgrade()) ? "#C6AA94FF".ToColor() : "#FF4364FF".ToColor());
+		}
 	}
 
 	private bool CanUpgrade()
@@ -267,13 +285,40 @@ public class UIWeaponsDetailsPopup : UIMenuPopup
 
 	private void UpdateWeaponStats()
 	{
-		_title.text = _weaponConfig.Title.ToUpper();
-		_weaponShapeText.text = _weaponConfig.RangeType + " Range";
-		_damageText.text = _weaponData.GetMinDamage( true).ToString();
-		_damageBonusText.text = "+" + _weaponData.GetNextLevelDamageBonus();
-		_hpText.text = _weaponData.HPMax.ToString();
-		_hpBonusText.text = "+" + _weaponData.GetNextLevelHPBonus();
-		_levelText.text = "Lv. " + ((_weaponData == null) ? "1" : _weaponData.Level.ToString());
+		if (_title != null)
+		{
+			_title.text = _weaponConfig.Title.ToUpper();
+		}
+
+		if (_weaponShapeText != null)
+		{
+			_weaponShapeText.text = _weaponConfig.RangeType + " Range";
+		}
+
+		if (_damageText != null)
+		{
+			_damageText.text = _weaponData.GetMinDamage( true).ToString();
+		}
+
+		if (_damageBonusText != null)
+		{
+			_damageBonusText.text = "+" + _weaponData.GetNextLevelDamageBonus();
+		}
+
+		if (_hpText != null)
+		{
+			_hpText.text = _weaponData.HPMax.ToString();
+		}
+
+		if (_hpBonusText != null)
+		{
+			_hpBonusText.text = "+" + _weaponData.GetNextLevelHPBonus();
+		}
+
+		if (_levelText != null)
+		{
+			_levelText.text = "Lv. " + ((_weaponData == null) ? "1" : _weaponData.Level.ToString());
+		}
 	}
 
 	private void UpdateCardsInfo()

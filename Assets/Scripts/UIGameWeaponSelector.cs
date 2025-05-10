@@ -26,34 +26,75 @@ public class UIGameWeaponSelector : MonoBehaviour
 
 	public void Init(Character hero, GameState gameState, GameEvents gameEvents, List<WeaponData> equippedWeapons)
 	{
+		if (hero == null || gameState == null || gameEvents == null)
+		{
+			Debug.LogWarning("Required parameters are null in UIGameWeaponSelector.Init");
+			return;
+		}
+
 		_hero = hero;
 		_gameEvents = gameEvents;
 		_gameState = gameState;
+
+		if (equippedWeapons == null)
+		{
+			Debug.LogWarning("equippedWeapons is null in UIGameWeaponSelector.Init");
+			return;
+		}
+
 		UpdateWeapons(equippedWeapons);
 	}
 
 	public void UpdateWeapons(List<WeaponData> equippedWeapons)
 	{
+		if (_weapons == null || equippedWeapons == null)
+		{
+			Debug.LogWarning("_weapons or equippedWeapons is null in UIGameWeaponSelector.UpdateWeapons");
+			return;
+		}
+
 		int index = 0;
 		int num = 0;
 		foreach (UIGameWeapon weapon in _weapons)
 		{
+			if (weapon == null)
+			{
+				Debug.LogWarning("Weapon is null in _weapons list");
+				continue;
+			}
+
 			if (num < equippedWeapons.Count)
 			{
 				WeaponData data = equippedWeapons[num];
-				UIGameWeapon widget = weapon;
-				if (_hero.GetCurrentWeapon().Id == data.Id)
+				if (data == null)
+				{
+					Debug.LogWarning($"WeaponData at index {num} is null");
+					num++;
+					continue;
+				}
+
+				if (_hero != null && _hero.GetCurrentWeapon() != null && _hero.GetCurrentWeapon().Id == data.Id)
 				{
 					index = num;
 				}
-				weapon.gameObject.SetActive( true);
-				weapon.Init(_gameState, equippedWeapons[num]);
-				weapon.gameObject.GetComponent<UIGameButton>().Animate = false;
-				weapon.gameObject.GetComponent<UIGameButton>().ClearOnDownAction();
-				weapon.gameObject.GetComponent<UIGameButton>().OnDown(delegate
+
+				if (weapon.gameObject != null)
 				{
-					OnWeaponClicked(widget, data);
-				}, false);
+					weapon.gameObject.SetActive(true);
+					weapon.Init(_gameState, data);
+
+					var button = weapon.gameObject.GetComponent<UIGameButton>();
+					if (button != null)
+					{
+						button.Animate = false;
+						button.ClearOnDownAction();
+						UIGameWeapon widget = weapon;
+						button.OnDown(delegate
+						{
+							OnWeaponClicked(widget, data);
+						}, false);
+					}
+				}
 			}
 			else
 			{

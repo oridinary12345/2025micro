@@ -1,18 +1,17 @@
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIStatusBarCharacter : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI _characterNameText;
+	private Text _characterNameText;
 
 	[SerializeField]
 	private Slider _hpSlider;
 
 	[SerializeField]
-	private TextMeshProUGUI _hpText;
+	private Text _hpText;
 
 	[SerializeField]
 	private Transform _lifeIcon;
@@ -21,10 +20,10 @@ public class UIStatusBarCharacter : MonoBehaviour
 	private Image _elementImage;
 
 	[SerializeField]
-	private TextMeshProUGUI _levelText;
+	private Text _levelText;
 
 	[SerializeField]
-	private TextMeshProUGUI _remainingTurnText;
+	private Text _remainingTurnText;
 
 	private CharacterEvents _characterEvents;
 
@@ -36,18 +35,37 @@ public class UIStatusBarCharacter : MonoBehaviour
 
 	public void Init(Character character, CharacterEvents characterEvents, bool showMaxHP, bool showName)
 	{
+		if (character == null)
+		{
+			Debug.LogWarning("Character is null in UIStatusBarCharacter.Init");
+			return;
+		}
+
+		if (characterEvents == null)
+		{
+			Debug.LogWarning("CharacterEvents is null in UIStatusBarCharacter.Init");
+			return;
+		}
+
 		_character = character;
 		_characterEvents = characterEvents;
 		_showMaxHP = showMaxHP;
-		_characterNameText.text = ((!showName) ? string.Empty : character.Name);
-		UpdateHP( false);
+
+		if (_characterNameText != null)
+		{
+			_characterNameText.text = ((!showName) ? string.Empty : character.Name);
+		}
+
+		UpdateHP(false);
 		UnregisterEvents();
 		_characterEvents.DamagedEvent += OnDamaged;
 		_characterEvents.HealedEvent += OnHealed;
+
 		if (_elementImage != null)
 		{
-			_elementImage.gameObject.SetActive( false);
+			_elementImage.gameObject.SetActive(false);
 		}
+
 		if (_levelText != null && character is Hero)
 		{
 			_levelText.text = $"Lv. {((Hero)character).Level}";
@@ -86,25 +104,50 @@ public class UIStatusBarCharacter : MonoBehaviour
 
 	public void SetRemainingTurnText(int turnCount)
 	{
-		_remainingTurnText.enabled = (turnCount > 0);
-		_remainingTurnText.transform.parent.GetComponent<Image>().enabled = (turnCount > 0);
-		_remainingTurnText.text = turnCount.ToString();
+		if (_remainingTurnText != null)
+		{
+			_remainingTurnText.enabled = (turnCount > 0);
+			var parentImage = _remainingTurnText.transform.parent?.GetComponent<Image>();
+			if (parentImage != null)
+			{
+				parentImage.enabled = (turnCount > 0);
+			}
+			_remainingTurnText.text = turnCount.ToString();
+		}
 	}
 
 	private void UpdateHP(bool animate = true)
 	{
-		_hpSlider.DOValue(_character.HP01, (!animate) ? 0f : 0.2f);
-		_hpText.text = _character.HP + ((!_showMaxHP) ? string.Empty : ("/" + _character.HPMax));
-		if (_character.IsHero())
+		if (_character == null)
 		{
-			_hpText.SwapMaterial((_character.HP > 5) ? "FiraSansExtraCondensed-ExtraBold SDF - Default" : "FiraSansExtraCondensed-ExtraBold SDF - Negative");
+			Debug.LogWarning("Character is null in UIStatusBarCharacter.UpdateHP");
+			return;
 		}
+
+		if (_hpSlider != null)
+		{
+			_hpSlider.DOValue(_character.HP01, (!animate) ? 0f : 0.2f);
+		}
+
+		if (_hpText != null)
+		{
+			_hpText.text = _character.HP + ((!_showMaxHP) ? string.Empty : ("/" + _character.HPMax));
+			if (_character.IsHero())
+			{
+				// 根据血量设置颜色
+				_hpText.color = (_character.HP > 5) ? Color.white : Color.red;
+			}
+		}
+
 		if (animate && !_isAnimating && _lifeIcon != null)
 		{
 			_isAnimating = true;
 			_lifeIcon.DOPunchScale(Vector3.one * 0.5f, 0.2f).OnComplete(delegate
 			{
-				_lifeIcon.localScale = Vector3.one;
+				if (_lifeIcon != null)
+				{
+					_lifeIcon.localScale = Vector3.one;
+				}
 				_isAnimating = false;
 			});
 		}

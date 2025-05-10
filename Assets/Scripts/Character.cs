@@ -347,9 +347,20 @@ public abstract class Character : MonoBehaviour
 
 	public void UpdateEquippedWeapons(List<WeaponData> equippedWeapons)
 	{
-		string currentWeaponId = GetCurrentWeapon().Id;
+		if (equippedWeapons == null || equippedWeapons.Count == 0)
+		{
+			Debug.LogWarning("No weapons available in UpdateEquippedWeapons");
+			UpdateWeapons(new List<WeaponData>());
+			return;
+		}
+
+		WeaponData currentWeapon = GetCurrentWeapon();
+		string currentWeaponId = currentWeapon != null ? currentWeapon.Id : null;
+
 		UpdateWeapons(equippedWeapons);
-		if (equippedWeapons.Find((WeaponData w) => w.Id == currentWeaponId) == null)
+
+		// 如果当前武器不在新的武器列表中，切换到第一个可用武器
+		if (string.IsNullOrEmpty(currentWeaponId) || equippedWeapons.Find((WeaponData w) => w.Id == currentWeaponId) == null)
 		{
 			WeaponData weaponData = equippedWeapons[0];
 			_visual.SetWeapon(weaponData.GetSpriteName(), weaponData.IsRangedAttack(), weaponData.Broken);
