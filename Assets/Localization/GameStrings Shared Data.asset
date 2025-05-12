@@ -1,0 +1,371 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: GameStrings Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: GameStrings
+  m_TableCollectionNameGuidString: 849f4616bcb564541b3692b937dedab4
+  m_Entries:
+  - m_Id: 6697174470656
+    m_Key: UI_SCORE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582595
+  - m_Id: 6697228996608
+    m_Key: UI_GAME_OVER
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582596
+  - m_Id: 6697228996609
+    m_Key: UI_TAP_TO_CONTINUE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582597
+  - m_Id: 6697228996610
+    m_Key: UI_CONTINUE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582598
+  - m_Id: 6697233190912
+    m_Key: UI_REPAIR
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582599
+  - m_Id: 6697233190913
+    m_Key: UI_UPGRADE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582600
+  - m_Id: 6697233190914
+    m_Key: UI_NO_THANKS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582601
+  - m_Id: 6697233190915
+    m_Key: UI_ADD_RUBIES
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582602
+  - m_Id: 6697233190916
+    m_Key: UI_QUIT
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582603
+  - m_Id: 6697233190917
+    m_Key: UI_SHORT_RANGE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582604
+  - m_Id: 6697233190918
+    m_Key: UI_LONG_RANGE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582605
+  - m_Id: 6697233190919
+    m_Key: WEAPONS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582606
+  - m_Id: 6697233190920
+    m_Key: UI_SETTINGS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582607
+  - m_Id: 6697233190921
+    m_Key: UI_MUSIC
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582608
+  - m_Id: 6697233190922
+    m_Key: UI_ROYAL_CHESTS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582609
+  - m_Id: 6697233190923
+    m_Key: UI_PROMO_CODE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582610
+  - m_Id: 6697233190924
+    m_Key: UI_ENTER_CODE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582611
+  - m_Id: 6697233190925
+    m_Key: UI_WORLD_DUNGEON
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582612
+  - m_Id: 6697233190926
+    m_Key: UI_NEXT_WORLD
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582613
+  - m_Id: 6697233190927
+    m_Key: UI_COMPLETE_MISSIONS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582614
+  - m_Id: 6697233190928
+    m_Key: UI_UNLOCK_PREVIOUS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582615
+  - m_Id: 6697233190929
+    m_Key: UI_UNLOCK
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582616
+  - m_Id: 6697233190930
+    m_Key: UI_KILL_MONSTERS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582617
+  - m_Id: 6697233190931
+    m_Key: UI_QUESTS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582618
+  - m_Id: 6697233190932
+    m_Key: UI_HAMMER
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582619
+  - m_Id: 6697233190933
+    m_Key: UI_SELECTED
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582620
+  - m_Id: 6697233190934
+    m_Key: UI_LEVEL
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582621
+  - m_Id: 6697233190935
+    m_Key: UI_WELCOME_BACK
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582622
+  - m_Id: 6697233190936
+    m_Key: UI_AWAY_EARNED
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582623
+  - m_Id: 6697233190937
+    m_Key: UI_FREE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582624
+  - m_Id: 6697233190938
+    m_Key: UI_PREMIUM
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582625
+  - m_Id: 6697233190939
+    m_Key: UI_NOT_FOUND
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582626
+  - m_Id: 6697233190940
+    m_Key: UI_EMPTY
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582627
+  - m_Id: 6697233190941
+    m_Key: UI_BROKEN
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582628
+  - m_Id: 6697233190942
+    m_Key: UI_FREE_COINS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582629
+  - m_Id: 6697233190943
+    m_Key: UI_ID
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582630
+  - m_Id: 6697233190944
+    m_Key: UI_CHEATS
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582631
+  - m_Id: 6697233190945
+    m_Key: UI_QUEST_COMPLETED
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582632
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7119383148073582594
+  references:
+    version: 2
+    RefIds:
+    - rid: 7119383148073582594
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1747035000355
+    - rid: 7119383148073582595
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Score text
+    - rid: 7119383148073582596
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Game over text
+    - rid: 7119383148073582597
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Continue prompt
+    - rid: 7119383148073582598
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Continue question
+    - rid: 7119383148073582599
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Repair button
+    - rid: 7119383148073582600
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Upgrade button
+    - rid: 7119383148073582601
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Decline button
+    - rid: 7119383148073582602
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Add currency button
+    - rid: 7119383148073582603
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Quit confirmation
+    - rid: 7119383148073582604
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapon range
+    - rid: 7119383148073582605
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapon range
+    - rid: 7119383148073582606
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapons category
+    - rid: 7119383148073582607
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Settings menu
+    - rid: 7119383148073582608
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Music option
+    - rid: 7119383148073582609
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Chest type
+    - rid: 7119383148073582610
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Promotion code
+    - rid: 7119383148073582611
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Code entry prompt
+    - rid: 7119383148073582612
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: World name
+    - rid: 7119383148073582613
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Next world button
+    - rid: 7119383148073582614
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Mission completion text
+    - rid: 7119383148073582615
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Previous world requirement
+    - rid: 7119383148073582616
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Unlock button
+    - rid: 7119383148073582617
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Monster kill quest
+    - rid: 7119383148073582618
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Quests category
+    - rid: 7119383148073582619
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapon name
+    - rid: 7119383148073582620
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Selection status
+    - rid: 7119383148073582621
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Level abbreviation
+    - rid: 7119383148073582622
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Welcome message
+    - rid: 7119383148073582623
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Away earnings message
+    - rid: 7119383148073582624
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Free label
+    - rid: 7119383148073582625
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Premium label
+    - rid: 7119383148073582626
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Not found message
+    - rid: 7119383148073582627
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Empty state
+    - rid: 7119383148073582628
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Broken status
+    - rid: 7119383148073582629
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Free coins message
+    - rid: 7119383148073582630
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: ID format
+    - rid: 7119383148073582631
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Cheats menu
+    - rid: 7119383148073582632
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Quest completion message

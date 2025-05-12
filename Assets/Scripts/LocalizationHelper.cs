@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -13,6 +14,11 @@ public static class LocalizationHelper
 {
     private static bool isInitialized = false;
     private static Dictionary<string, string> cachedTranslations = new Dictionary<string, string>();
+
+    /// <summary>
+    /// 语言变化事件
+    /// </summary>
+    public static Action OnLanguageChanged;
 
     /// <summary>
     /// 当前语言
@@ -213,6 +219,9 @@ public static class LocalizationHelper
                 LocalizationSettings.SelectedLocale = locale;
                 ClearCache();
                 Debug.Log($"语言已切换为: {languageName}");
+                
+                // 触发语言变化事件
+                OnLanguageChanged?.Invoke();
                 return;
             }
         }

@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: GameStrings_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 849f4616bcb564541b3692b937dedab4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6697174470656
+    m_Localized: SCORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697228996608
+    m_Localized: "PARTIE TERMIN\xC9E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697228996609
+    m_Localized: Appuyez pour continuer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697228996610
+    m_Localized: CONTINUER?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190912
+    m_Localized: "R\xC9PARER"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190913
+    m_Localized: "AM\xC9LIORER"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190914
+    m_Localized: NON MERCI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190915
+    m_Localized: AJOUTER DES RUBIS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190916
+    m_Localized: QUITTER?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190917
+    m_Localized: "COURTE PORT\xC9E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190918
+    m_Localized: "LONGUE PORT\xC9E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190919
+    m_Localized: ARMES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190920
+    m_Localized: "PARAM\xC8TRES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190921
+    m_Localized: MUSIQUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190922
+    m_Localized: COFFRES ROYAUX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190923
+    m_Localized: CODE PROMO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190924
+    m_Localized: 'Entrez votre code:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190925
+    m_Localized: MONDE 2 - LE DONJON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190926
+    m_Localized: Monde suivant!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190927
+    m_Localized: "Compl\xE9tez ces missions pour d\xE9bloquer le monde suivant!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190928
+    m_Localized: "D\xE9verrouillez les mondes pr\xE9c\xE9dents pour acc\xE9der \xE0
+      celui-ci."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190929
+    m_Localized: "D\xC9VERROUILLER"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190930
+    m_Localized: Tuez 30 monstres avec le marteau.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190931
+    m_Localized: "Qu\xEAtes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190932
+    m_Localized: MARTEAU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190933
+    m_Localized: "S\xC9LECTIONN\xC9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190934
+    m_Localized: Niv
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190935
+    m_Localized: BIENVENUE DE RETOUR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190936
+    m_Localized: "Pendant votre absence vous avez gagn\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190937
+    m_Localized: GRATUIT!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190938
+    m_Localized: PREMIUM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190939
+    m_Localized: "NON TROUV\xC9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190940
+    m_Localized: VIDE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190941
+    m_Localized: "CASS\xC9!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190942
+    m_Localized: "Pi\xE8ces gratuites!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190943
+    m_Localized: 'ID: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190944
+    m_Localized: TRICHE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6697233190945
+    m_Localized: "Qu\xEAte termin\xE9e!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
