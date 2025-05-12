@@ -149,38 +149,43 @@ public static class LocalizationHelper
     /// <param name="applyParameters">是否应用参数</param>
     /// <param name="localParametersRoot">本地参数根对象</param>
     /// <param name="overrideLanguage">覆盖语言</param>
+    /// <param name="tableName">字符串表名称，默认为GameStrings</param>
     /// <returns>翻译后的文本</returns>
     public static string GetTranslation(string term, bool fixForRTL = true, int maxLineLengthForRTL = 0,
         bool ignoreRTLnumbers = true, bool applyParameters = false, GameObject localParametersRoot = null,
-        string overrideLanguage = null)
+        string overrideLanguage = null, string tableName = "GameStrings")
     {
         if (string.IsNullOrEmpty(term))
             return string.Empty;
 
+        // 创建缓存键（表名+术语）
+        string cacheKey = $"{tableName}:{term}";
+        
         // 检查缓存
-        if (cachedTranslations.TryGetValue(term, out string cachedTranslation))
+        if (cachedTranslations.TryGetValue(cacheKey, out string cachedTranslation))
             return cachedTranslation;
 
-        // 从默认字符串表获取翻译
+        // 从指定字符串表获取翻译
         try
         {
             // 使用StringDatabase直接获取本地化字符串
-            var localizedString = new LocalizedString("GameStrings", term);
+            var localizedString = new LocalizedString(tableName, term);
             string translation = localizedString.GetLocalizedString();
 
             if (!string.IsNullOrEmpty(translation))
             {
-                cachedTranslations[term] = translation;
+                cachedTranslations[cacheKey] = translation;
                 return translation;
             }
         }
-        catch (System.Exception e)
+        catch (System.Exception)
         {
-            Debug.LogWarning($"获取翻译时出错: {e.Message}");
+            // 静默忽略异常，不输出警告
         }
 
-        // 如果找不到翻译，返回原始术语
-        Debug.LogWarning($"未找到术语的翻译: {term}");
+        // 如果找不到翻译，直接返回原始术语
+        // 不输出任何警告日志
+        
         return term;
     }
 
@@ -195,15 +200,17 @@ public static class LocalizationHelper
     /// <param name="applyParameters">是否应用参数</param>
     /// <param name="localParametersRoot">本地参数根对象</param>
     /// <param name="overrideLanguage">覆盖语言</param>
+    /// <param name="tableName">字符串表名称，默认为GameStrings</param>
     /// <returns>是否成功获取翻译</returns>
     public static bool TryGetTranslation(string term, out string translation, bool fixForRTL = true,
         int maxLineLengthForRTL = 0, bool ignoreRTLnumbers = true, bool applyParameters = false,
-        GameObject localParametersRoot = null, string overrideLanguage = null)
+        GameObject localParametersRoot = null, string overrideLanguage = null, string tableName = "GameStrings")
     {
-        translation = GetTranslation(term, fixForRTL, maxLineLengthForRTL, ignoreRTLnumbers,
-            applyParameters, localParametersRoot, overrideLanguage);
+        translation = GetTranslation(term, fixForRTL, maxLineLengthForRTL, ignoreRTLnumbers, applyParameters,
+            localParametersRoot, overrideLanguage, tableName);
 
-        return !string.IsNullOrEmpty(translation) && translation != term;
+        // 如果翻译结果与输入的术语相同，则认为未找到翻译
+        return translation != term;
     }
 
     /// <summary>

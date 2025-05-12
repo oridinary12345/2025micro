@@ -31,11 +31,11 @@ public class SimpleLocalizedText : MonoBehaviour
     {
         if (_text != null && !string.IsNullOrEmpty(_originalText))
         {
+            // 获取翻译文本，LocalizationHelper.GetTranslation已经确保在找不到翻译时返回原文本
             string translatedText = LocalizationHelper.GetTranslation(_originalText);
-            if (!string.IsNullOrEmpty(translatedText))
-            {
-                _text.text = translatedText;
-            }
+            
+            // 无论如何都更新文本，确保显示内容
+            _text.text = translatedText;
         }
     }
 }

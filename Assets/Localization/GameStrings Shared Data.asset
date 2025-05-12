@@ -15,196 +15,256 @@ MonoBehaviour:
   m_TableCollectionName: GameStrings
   m_TableCollectionNameGuidString: 849f4616bcb564541b3692b937dedab4
   m_Entries:
-  - m_Id: 6697174470656
-    m_Key: UI_SCORE
+  - m_Id: 47181519425536
+    m_Key: SCORE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582595
-  - m_Id: 6697228996608
-    m_Key: UI_GAME_OVER
+      - rid: 7119383148073582635
+  - m_Id: 47181586534400
+    m_Key: GAME_OVER
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582596
-  - m_Id: 6697228996609
-    m_Key: UI_TAP_TO_CONTINUE
+      - rid: 7119383148073582636
+  - m_Id: 47181586534401
+    m_Key: TAP_TO_CONTINUE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582597
-  - m_Id: 6697228996610
-    m_Key: UI_CONTINUE
+      - rid: 7119383148073582637
+  - m_Id: 47181586534402
+    m_Key: CONTINUE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582598
-  - m_Id: 6697233190912
-    m_Key: UI_REPAIR
+      - rid: 7119383148073582638
+  - m_Id: 47181586534403
+    m_Key: REPAIR
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582599
-  - m_Id: 6697233190913
-    m_Key: UI_UPGRADE
+      - rid: 7119383148073582639
+  - m_Id: 47181586534404
+    m_Key: UPGRADE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582600
-  - m_Id: 6697233190914
-    m_Key: UI_NO_THANKS
+      - rid: 7119383148073582640
+  - m_Id: 47181586534405
+    m_Key: NO_THANKS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582601
-  - m_Id: 6697233190915
-    m_Key: UI_ADD_RUBIES
+      - rid: 7119383148073582641
+  - m_Id: 47181586534406
+    m_Key: ADD_RUBIES
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582602
-  - m_Id: 6697233190916
-    m_Key: UI_QUIT
+      - rid: 7119383148073582642
+  - m_Id: 47181586534407
+    m_Key: QUIT
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582603
-  - m_Id: 6697233190917
-    m_Key: UI_SHORT_RANGE
+      - rid: 7119383148073582643
+  - m_Id: 47181586534408
+    m_Key: SHORT_RANGE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582604
-  - m_Id: 6697233190918
-    m_Key: UI_LONG_RANGE
+      - rid: 7119383148073582644
+  - m_Id: 47181586534409
+    m_Key: LONG_RANGE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582605
+      - rid: 7119383148073582645
   - m_Id: 6697233190919
     m_Key: WEAPONS
     m_Metadata:
       m_Items:
       - rid: 7119383148073582606
-  - m_Id: 6697233190920
-    m_Key: UI_SETTINGS
+  - m_Id: 47181586534410
+    m_Key: SETTINGS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582607
-  - m_Id: 6697233190921
-    m_Key: UI_MUSIC
+      - rid: 7119383148073582646
+  - m_Id: 47181586534411
+    m_Key: MUSIC
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582608
-  - m_Id: 6697233190922
-    m_Key: UI_ROYAL_CHESTS
+      - rid: 7119383148073582647
+  - m_Id: 47181590728704
+    m_Key: ROYAL_CHESTS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582609
-  - m_Id: 6697233190923
-    m_Key: UI_PROMO_CODE
+      - rid: 7119383148073582648
+  - m_Id: 47181590728705
+    m_Key: PROMO_CODE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582610
-  - m_Id: 6697233190924
-    m_Key: UI_ENTER_CODE
+      - rid: 7119383148073582649
+  - m_Id: 47181590728706
+    m_Key: ENTER_CODE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582611
-  - m_Id: 6697233190925
-    m_Key: UI_WORLD_DUNGEON
+      - rid: 7119383148073582650
+  - m_Id: 47181590728707
+    m_Key: WORLD_DUNGEON
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582612
-  - m_Id: 6697233190926
-    m_Key: UI_NEXT_WORLD
+      - rid: 7119383148073582651
+  - m_Id: 47181590728708
+    m_Key: NEXT_WORLD
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582613
-  - m_Id: 6697233190927
-    m_Key: UI_COMPLETE_MISSIONS
+      - rid: 7119383148073582652
+  - m_Id: 47181590728709
+    m_Key: COMPLETE_MISSIONS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582614
-  - m_Id: 6697233190928
-    m_Key: UI_UNLOCK_PREVIOUS
+      - rid: 7119383148073582653
+  - m_Id: 47181590728710
+    m_Key: UNLOCK_PREVIOUS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582615
-  - m_Id: 6697233190929
-    m_Key: UI_UNLOCK
+      - rid: 7119383148073582654
+  - m_Id: 47181590728711
+    m_Key: UNLOCK
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582616
-  - m_Id: 6697233190930
-    m_Key: UI_KILL_MONSTERS
+      - rid: 7119383148073582655
+  - m_Id: 47181590728712
+    m_Key: KILL_MONSTERS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582617
-  - m_Id: 6697233190931
-    m_Key: UI_QUESTS
+      - rid: 7119383148073582656
+  - m_Id: 47181590728713
+    m_Key: QUESTS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582618
-  - m_Id: 6697233190932
-    m_Key: UI_HAMMER
+      - rid: 7119383148073582657
+  - m_Id: 47181590728714
+    m_Key: HAMMER
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582619
-  - m_Id: 6697233190933
-    m_Key: UI_SELECTED
+      - rid: 7119383148073582658
+  - m_Id: 47181590728715
+    m_Key: SELECTED
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582620
-  - m_Id: 6697233190934
-    m_Key: UI_LEVEL
+      - rid: 7119383148073582659
+  - m_Id: 47181590728716
+    m_Key: LEVEL
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582621
-  - m_Id: 6697233190935
-    m_Key: UI_WELCOME_BACK
+      - rid: 7119383148073582660
+  - m_Id: 47181590728717
+    m_Key: WELCOME_BACK
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582622
-  - m_Id: 6697233190936
-    m_Key: UI_AWAY_EARNED
+      - rid: 7119383148073582661
+  - m_Id: 47181590728718
+    m_Key: AWAY_EARNED
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582623
-  - m_Id: 6697233190937
-    m_Key: UI_FREE
+      - rid: 7119383148073582662
+  - m_Id: 47181590728719
+    m_Key: FREE
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582624
-  - m_Id: 6697233190938
-    m_Key: UI_PREMIUM
+      - rid: 7119383148073582663
+  - m_Id: 47181590728720
+    m_Key: PREMIUM
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582625
-  - m_Id: 6697233190939
-    m_Key: UI_NOT_FOUND
+      - rid: 7119383148073582664
+  - m_Id: 47181590728721
+    m_Key: NOT_FOUND
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582626
-  - m_Id: 6697233190940
-    m_Key: UI_EMPTY
+      - rid: 7119383148073582665
+  - m_Id: 47181590728722
+    m_Key: EMPTY
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582627
-  - m_Id: 6697233190941
-    m_Key: UI_BROKEN
+      - rid: 7119383148073582666
+  - m_Id: 47181590728723
+    m_Key: BROKEN
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582628
-  - m_Id: 6697233190942
-    m_Key: UI_FREE_COINS
+      - rid: 7119383148073582667
+  - m_Id: 47181590728724
+    m_Key: FREE_COINS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582629
-  - m_Id: 6697233190943
-    m_Key: UI_ID
+      - rid: 7119383148073582668
+  - m_Id: 47181590728725
+    m_Key: ID
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582630
-  - m_Id: 6697233190944
-    m_Key: UI_CHEATS
+      - rid: 7119383148073582669
+  - m_Id: 47181590728726
+    m_Key: CHEATS
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582631
-  - m_Id: 6697233190945
-    m_Key: UI_QUEST_COMPLETED
+      - rid: 7119383148073582670
+  - m_Id: 47181590728727
+    m_Key: QUEST_COMPLETED
     m_Metadata:
       m_Items:
-      - rid: 7119383148073582632
+      - rid: 7119383148073582671
+  - m_Id: 53408223760384
+    m_Key: HEROES
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582672
+  - m_Id: 53408223760385
+    m_Key: SHOP
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582673
+  - m_Id: 53408223760386
+    m_Key: PLAY
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582674
+  - m_Id: 53408223760387
+    m_Key: WEAPONS_UPGRADE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582675
+  - m_Id: 53408223760388
+    m_Key: WEAPONS_NEW
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582676
+  - m_Id: 53408223760389
+    m_Key: HEROES_UPGRADE
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582677
+  - m_Id: 53408223760390
+    m_Key: HEROES_NEW
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582678
+  - m_Id: 53408223760391
+    m_Key: WORLD
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582679
+  - m_Id: 53408223760392
+    m_Key: LOCK_ON
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582680
+  - m_Id: 53408223760393
+    m_Key: LOCK_OFF
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582681
+  - m_Id: 53408223760394
+    m_Key: WEAPON_STATUS_CLOCK
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582682
+  - m_Id: 53408223760395
+    m_Key: WEAPON_STATUS_REPAIR
+    m_Metadata:
+      m_Items:
+      - rid: 7119383148073582683
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -217,155 +277,203 @@ MonoBehaviour:
         asm: Unity.Localization}
       data:
         m_CustomEpoch: 1747035000355
-    - rid: 7119383148073582595
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Score text
-    - rid: 7119383148073582596
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Game over text
-    - rid: 7119383148073582597
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Continue prompt
-    - rid: 7119383148073582598
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Continue question
-    - rid: 7119383148073582599
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Repair button
-    - rid: 7119383148073582600
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Upgrade button
-    - rid: 7119383148073582601
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Decline button
-    - rid: 7119383148073582602
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Add currency button
-    - rid: 7119383148073582603
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Quit confirmation
-    - rid: 7119383148073582604
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Weapon range
-    - rid: 7119383148073582605
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Weapon range
     - rid: 7119383148073582606
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Weapons category
-    - rid: 7119383148073582607
+    - rid: 7119383148073582635
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Score text
+    - rid: 7119383148073582636
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Game over text
+    - rid: 7119383148073582637
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Continue prompt
+    - rid: 7119383148073582638
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Continue question
+    - rid: 7119383148073582639
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Repair button
+    - rid: 7119383148073582640
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Upgrade button
+    - rid: 7119383148073582641
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Decline button
+    - rid: 7119383148073582642
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Add currency button
+    - rid: 7119383148073582643
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Quit confirmation
+    - rid: 7119383148073582644
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapon range
+    - rid: 7119383148073582645
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapon range
+    - rid: 7119383148073582646
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Settings menu
-    - rid: 7119383148073582608
+    - rid: 7119383148073582647
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Music option
-    - rid: 7119383148073582609
+    - rid: 7119383148073582648
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Chest type
-    - rid: 7119383148073582610
+    - rid: 7119383148073582649
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Promotion code
-    - rid: 7119383148073582611
+    - rid: 7119383148073582650
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Code entry prompt
-    - rid: 7119383148073582612
+    - rid: 7119383148073582651
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: World name
-    - rid: 7119383148073582613
+    - rid: 7119383148073582652
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Next world button
-    - rid: 7119383148073582614
+    - rid: 7119383148073582653
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Mission completion text
-    - rid: 7119383148073582615
+    - rid: 7119383148073582654
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Previous world requirement
-    - rid: 7119383148073582616
+    - rid: 7119383148073582655
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Unlock button
-    - rid: 7119383148073582617
+    - rid: 7119383148073582656
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Monster kill quest
-    - rid: 7119383148073582618
+    - rid: 7119383148073582657
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Quests category
-    - rid: 7119383148073582619
+    - rid: 7119383148073582658
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Weapon name
-    - rid: 7119383148073582620
+    - rid: 7119383148073582659
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Selection status
-    - rid: 7119383148073582621
+    - rid: 7119383148073582660
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Level abbreviation
-    - rid: 7119383148073582622
+    - rid: 7119383148073582661
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Welcome message
-    - rid: 7119383148073582623
+    - rid: 7119383148073582662
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Away earnings message
-    - rid: 7119383148073582624
+    - rid: 7119383148073582663
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Free label
-    - rid: 7119383148073582625
+    - rid: 7119383148073582664
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Premium label
-    - rid: 7119383148073582626
+    - rid: 7119383148073582665
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Not found message
-    - rid: 7119383148073582627
+    - rid: 7119383148073582666
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Empty state
-    - rid: 7119383148073582628
+    - rid: 7119383148073582667
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Broken status
-    - rid: 7119383148073582629
+    - rid: 7119383148073582668
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Free coins message
-    - rid: 7119383148073582630
+    - rid: 7119383148073582669
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: ID format
-    - rid: 7119383148073582631
+    - rid: 7119383148073582670
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Cheats menu
-    - rid: 7119383148073582632
+    - rid: 7119383148073582671
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: Quest completion message
+    - rid: 7119383148073582672
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Heroes category
+    - rid: 7119383148073582673
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Shop category
+    - rid: 7119383148073582674
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Play button
+    - rid: 7119383148073582675
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapons upgrade notification
+    - rid: 7119383148073582676
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: New weapon notification
+    - rid: 7119383148073582677
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Heroes upgrade notification
+    - rid: 7119383148073582678
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: New hero notification
+    - rid: 7119383148073582679
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: World category
+    - rid: 7119383148073582680
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Locked status
+    - rid: 7119383148073582681
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Unlocked status
+    - rid: 7119383148073582682
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapon status clock
+    - rid: 7119383148073582683
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Weapon status repair

@@ -16,7 +16,7 @@ namespace Prime31.TransitionKit
 
 		public Shader shaderForTransition()
 		{
-			return Shader.Find("prime[31]/Transitions/Fader");
+			return Shader.Find("prime31/Transitions/Fader");
 		}
 
 		public Mesh meshForDisplay()

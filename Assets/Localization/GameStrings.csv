@@ -1,39 +1,51 @@
 Key,Id,Shared Comments,English(en),Chinese (Simplified)(zh-CN),French(fr)
-UI_SCORE,,Score text,SCORE,得分,SCORE
-UI_GAME_OVER,,Game over text,GAME OVER,游戏结束,PARTIE TERMINÉE
-UI_TAP_TO_CONTINUE,,Continue prompt,Tap to continue,点击继续,Appuyez pour continuer
-UI_CONTINUE,,Continue question,CONTINUE?,继续？,CONTINUER?
-UI_REPAIR,,Repair button,REPAIR,修复,RÉPARER
-UI_UPGRADE,,Upgrade button,UPGRADE,升级,AMÉLIORER
-UI_NO_THANKS,,Decline button,NO THANKS,不用了,NON MERCI
-UI_ADD_RUBIES,,Add currency button,ADD RUBIES,添加宝石,AJOUTER DES RUBIS
-UI_QUIT,,Quit confirmation,QUIT?,退出？,QUITTER?
-UI_SHORT_RANGE,,Weapon range,Short Range,短程,COURTE PORTÉE
-UI_LONG_RANGE,,Weapon range,Long Range,远程,LONGUE PORTÉE
-UI_WEAPONS,,Weapons category,Weapons,武器,ARMES
-UI_SETTINGS,,Settings menu,SETTINGS,设置,PARAMÈTRES
-UI_MUSIC,,Music option,MUSIC,音乐,MUSIQUE
-UI_ROYAL_CHESTS,,Chest type,ROYAL CHESTS,皇家宝箱,COFFRES ROYAUX
-UI_PROMO_CODE,,Promotion code,PROMO CODE,促销码,CODE PROMO
-UI_ENTER_CODE,,Code entry prompt,Enter your code:,输入您的代码：,Entrez votre code:
-UI_WORLD_DUNGEON,,World name,WORLD 2 - THE DUNGEON,世界2 - 地下城,MONDE 2 - LE DONJON
-UI_NEXT_WORLD,,Next world button,Next world!,下一个世界！,Monde suivant!
-UI_COMPLETE_MISSIONS,,Mission completion text,Complete these missions to unlock the next world!,完成这些任务以解锁下一个世界！,Complétez ces missions pour débloquer le monde suivant!
-UI_UNLOCK_PREVIOUS,,Previous world requirement,Unlock previous worlds to access this one.,解锁之前的世界以访问此世界。,Déverrouillez les mondes précédents pour accéder à celui-ci.
-UI_UNLOCK,,Unlock button,UNLOCK,解锁,DÉVERROUILLER
-UI_KILL_MONSTERS,,Monster kill quest,Kill 30 monsters with the hammer.,用锤子击杀30个怪物。,Tuez 30 monstres avec le marteau.
-UI_QUESTS,,Quests category,Quests,任务,Quêtes
-UI_HAMMER,,Weapon name,HAMMER,锤子,MARTEAU
-UI_SELECTED,,Selection status,SELECTED,已选择,SÉLECTIONNÉ
-UI_LEVEL,,Level abbreviation,Lvl,等级,Niv
-UI_WELCOME_BACK,,Welcome message,WELCOME BACK,欢迎回来,BIENVENUE DE RETOUR
-UI_AWAY_EARNED,,Away earnings message,While you where away you earned,在您离开期间获得了,Pendant votre absence vous avez gagné
-UI_FREE,,Free label,FREE!,免费！,GRATUIT!
-UI_PREMIUM,,Premium label,PREMIUM,高级,PREMIUM
-UI_NOT_FOUND,,Not found message,NOT FOUND,未找到,NON TROUVÉ
-UI_EMPTY,,Empty state,EMPTY,空的,VIDE
-UI_BROKEN,,Broken status,BROKEN!,损坏！,CASSÉ!
-UI_FREE_COINS,,Free coins message,Free coins!,免费金币！,Pièces gratuites!
-UI_ID,,ID format,ID: {0},ID: {0},ID: {0}
-UI_CHEATS,,Cheats menu,CHEATS,作弊,TRICHE
-UI_QUEST_COMPLETED,,Quest completion message,Quest completed!,任务完成！,Quête terminée!
+SCORE,,Score text,SCORE,得分,SCORE
+GAME_OVER,,Game over text,GAME OVER,游戏结束,PARTIE TERMINÉE
+TAP_TO_CONTINUE,,Continue prompt,Tap to continue,点击继续,Appuyez pour continuer
+CONTINUE,,Continue question,CONTINUE?,继续？,CONTINUER?
+REPAIR,,Repair button,REPAIR,修复,RÉPARER
+UPGRADE,,Upgrade button,UPGRADE,升级,AMÉLIORER
+NO_THANKS,,Decline button,NO THANKS,不用了,NON MERCI
+ADD_RUBIES,,Add currency button,ADD RUBIES,添加宝石,AJOUTER DES RUBIS
+QUIT,,Quit confirmation,QUIT?,退出？,QUITTER?
+SHORT_RANGE,,Weapon range,Short Range,短程,COURTE PORTÉE
+LONG_RANGE,,Weapon range,Long Range,远程,LONGUE PORTÉE
+WEAPONS,,Weapons category,Weapons,武器,ARMES
+SETTINGS,,Settings menu,SETTINGS,设置,PARAMÈTRES
+MUSIC,,Music option,MUSIC,音乐,MUSIQUE
+ROYAL_CHESTS,,Chest type,ROYAL CHESTS,皇家宝箱,COFFRES ROYAUX
+PROMO_CODE,,Promotion code,PROMO CODE,促销码,CODE PROMO
+ENTER_CODE,,Code entry prompt,Enter your code:,输入您的代码：,Entrez votre code:
+WORLD_DUNGEON,,World name,WORLD 2 - THE DUNGEON,世界2 - 地下城,MONDE 2 - LE DONJON
+NEXT_WORLD,,Next world button,Next world!,下一个世界！,Monde suivant!
+COMPLETE_MISSIONS,,Mission completion text,Complete these missions to unlock the next world!,完成这些任务以解锁下一个世界！,Complétez ces missions pour débloquer le monde suivant!
+UNLOCK_PREVIOUS,,Previous world requirement,Unlock previous worlds to access this one.,解锁之前的世界以访问此世界。,Déverrouillez les mondes précédents pour accéder à celui-ci.
+UNLOCK,,Unlock button,UNLOCK,解锁,DÉVERROUILLER
+KILL_MONSTERS,,Monster kill quest,Kill 30 monsters with the hammer.,用锤子击杀30个怪物。,Tuez 30 monstres avec le marteau.
+QUESTS,,Quests category,Quests,任务,Quêtes
+HAMMER,,Weapon name,HAMMER,锤子,MARTEAU
+SELECTED,,Selection status,SELECTED,已选择,SÉLECTIONNÉ
+LEVEL,,Level abbreviation,Lvl,等级,Niv
+WELCOME_BACK,,Welcome message,WELCOME BACK,欢迎回来,BIENVENUE DE RETOUR
+AWAY_EARNED,,Away earnings message,While you where away you earned,在您离开期间获得了,Pendant votre absence vous avez gagné
+FREE,,Free label,FREE!,免费！,GRATUIT!
+PREMIUM,,Premium label,PREMIUM,高级,PREMIUM
+NOT_FOUND,,Not found message,NOT FOUND,未找到,NON TROUVÉ
+EMPTY,,Empty state,EMPTY,空的,VIDE
+BROKEN,,Broken status,BROKEN!,损坏！,CASSÉ!
+FREE_COINS,,Free coins message,Free coins!,免费金币！,Pièces gratuites!
+ID,,ID format,ID: {0},ID: {0},ID: {0}
+CHEATS,,Cheats menu,CHEATS,作弊,TRICHE
+QUEST_COMPLETED,,Quest completion message,Quest completed!,任务完成！,Quête terminée!
+HEROES,,Heroes category,HEROES,英雄,HÉROS
+SHOP,,Shop category,SHOP,商店,BOUTIQUE
+PLAY,,Play button,PLAY,开始游戏,JOUER
+WEAPONS_UPGRADE,,Weapons upgrade notification,UPGRADE AVAILABLE,可升级,AMÉLIORATION DISPONIBLE
+WEAPONS_NEW,,New weapon notification,NEW,新武器,NOUVEAU
+HEROES_UPGRADE,,Heroes upgrade notification,UPGRADE AVAILABLE,可升级,AMÉLIORATION DISPONIBLE
+HEROES_NEW,,New hero notification,NEW,新英雄,NOUVEAU
+WORLD,,World category,WORLD,世界,MONDE
+LOCK_ON,,Locked status,LOCKED,已锁定,VERROUILLÉ
+LOCK_OFF,,Unlocked status,UNLOCKED,已解锁,DÉVERROUILLÉ
+WEAPON_STATUS_CLOCK,,Weapon status clock,COMING SOON,即将推出,BIENTÔT DISPONIBLE
+WEAPON_STATUS_REPAIR,,Weapon status repair,NEEDS REPAIR,需要修复,NÉCESSITE RÉPARATION

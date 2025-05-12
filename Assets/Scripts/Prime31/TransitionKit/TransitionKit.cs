@@ -58,7 +58,7 @@ namespace Prime31.TransitionKit
 			MeshFilter orAddComponent = getOrAddComponent<MeshFilter>();
 			orAddComponent.mesh = (_transitionKitDelegate.meshForDisplay() ?? generateQuadMesh());
 			material = getOrAddComponent<MeshRenderer>().material;
-			material.shader = (_transitionKitDelegate.shaderForTransition() ?? Shader.Find("prime[31]/Transitions/Fader"));
+			material.shader = (_transitionKitDelegate.shaderForTransition() ?? Shader.Find("prime31/Transitions/Fader"));
 			material.color = Color.white;
 			_instance.StartCoroutine(_instance.setupCameraAndTexture());
 		}
