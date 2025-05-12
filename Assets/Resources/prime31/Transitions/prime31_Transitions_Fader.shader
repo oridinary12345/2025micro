@@ -1,4 +1,4 @@
-Shader "prime[31]/Transitions/Fader"
+Shader "prime31/Transitions/Fader"
 {
   Properties
   {
