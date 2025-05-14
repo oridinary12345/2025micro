@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "cn.tuanjie.minigame.host": {
+      "version": "1.0.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.tuanjie.cn"
+    },
+    "com.qq.weixin.minigame": {
+      "version": "https://gitee.com/wechat-minigame/minigame-tuanjie-transform-sdk.git#v0.1.18",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4443e5a9bcf800118f7c3e10a7750e804ed3121b"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
