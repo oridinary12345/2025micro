@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 /// <summary>
 /// 资源显示组件，用于替代富文本sprite标签，提高性能
@@ -8,7 +7,7 @@ using TMPro;
 public class ResourceDisplay : MonoBehaviour
 {
     [SerializeField] private Image iconImage;
-    [SerializeField] private TextMeshProUGUI valueText; // 使用TextMeshPro但不使用富文本功能
+    [SerializeField] private Text valueText; // 使用普通Text组件
     
     [Tooltip("是否在数值前添加空格")]
     [SerializeField] private bool addSpaceBeforeValue = true;
@@ -116,7 +115,7 @@ public class ResourceDisplay : MonoBehaviour
     /// 设置文本字体大小
     /// </summary>
     /// <param name="fontSize">字体大小</param>
-    public void SetTextFontSize(float fontSize)
+    public void SetTextFontSize(int fontSize)
     {
         if (valueText != null)
         {

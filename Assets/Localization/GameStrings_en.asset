@@ -218,6 +218,68 @@ MonoBehaviour:
     m_Localized: NEEDS REPAIR
     m_Metadata:
       m_Items: []
+  - m_Id: 1438157383176192
+    m_Localized: Long Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1439619714682880
+    m_Localized: Medium Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1439708931723264
+    m_Localized: Short Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1440292694953984
+    m_Localized: ROYAL CHESTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1440491353968640
+    m_Localized: RUBIES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1440789388627968
+    m_Localized: COINS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1441443800715264
+    m_Localized: 'BATTERY
+
+      SAVING'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1441544573063168
+    m_Localized: SOUND FX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1441750551138304
+    m_Localized: PROMO CODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1441795585380352
+    m_Localized: CONTACT US
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1441901541888000
+    m_Localized: RESET GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1448506035572736
+    m_Localized: BROKEN!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1448846931824640
+    m_Localized: 3 WAVES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1449015207301120
+    m_Localized: PASS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1449076003737600
+    m_Localized: OF MONSTERS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

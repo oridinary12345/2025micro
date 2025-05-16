@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!1 &8963239395580189122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 6339899715719669694}
+  - component: {fileID: 6991551840133474480}
+  m_Layer: 5
+  m_HasEditorInfo: 1
+  m_Name: ResourceManage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6339899715719669694
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963239395580189122}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6991551840133474480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963239395580189122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f121efd686fb0fe439d3a72bab3b5988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceIcons:
+  - resourceType: 0
+    icon: {fileID: 21300000, guid: f71553f1098b42fc9b37a06e5cbca815, type: 3}
+  - resourceType: 3
+    icon: {fileID: 21300000, guid: a0bdcc0cd6044fef8fd818c4eb5477f5, type: 3}
+  - resourceType: 4
+    icon: {fileID: 21300000, guid: 9c7a6e8ac4564d5f87dea28fdaee527f, type: 3}
+  - resourceType: 1
+    icon: {fileID: 21300000, guid: e7b5c4c975ef4a2b9f012ef5602ba59b, type: 3}
+  - resourceType: 2
+    icon: {fileID: 21300000, guid: 6d8cdca02fd645309317e72853c10352, type: 3}
+  - resourceType: 5
+    icon: {fileID: 21300000, guid: 307abe94c7af4a609bd6acf5921173fc, type: 3}

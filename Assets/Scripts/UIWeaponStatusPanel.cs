@@ -1,13 +1,15 @@
 using DG.Tweening;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIWeaponStatusPanel : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI _statusText;
+	private Text _statusText;
+	
+	[SerializeField]
+	private ResourceDisplay _statusResourceDisplay; // 用于显示状态图标和文本
 
 	[SerializeField]
 	private Image _overlayImage;

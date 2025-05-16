@@ -118,4 +118,34 @@ public class ResourceManager : MonoBehaviour
         Debug.LogWarning($"未找到索引为 {iconIndex} 的图标");
         return null;
     }
+    
+    /// <summary>
+    /// 将TextMeshPro的sprite索引映射到ResourceType
+    /// </summary>
+    /// <param name="spriteIndex">TextMeshPro中的sprite索引</param>
+    /// <returns>对应的ResourceType</returns>
+    public ResourceType MapSpriteIndexToResourceType(int spriteIndex)
+    {
+        switch (spriteIndex)
+        {
+            case 0: return ResourceType.Coin;
+            case 1: return ResourceType.Heart; // 假设在TextMeshPro中索引1是心形
+            case 2: return ResourceType.Gem;
+            case 3: return ResourceType.Energy;
+            case 4: return ResourceType.Key;
+            case 5: return ResourceType.Star;
+            default: return ResourceType.Coin;
+        }
+    }
+    
+    /// <summary>
+    /// 通过TextMeshPro的sprite索引获取资源图标
+    /// </summary>
+    /// <param name="spriteIndex">TextMeshPro中的sprite索引</param>
+    /// <returns>对应的资源图标</returns>
+    public Sprite GetResourceIconBySpriteIndex(int spriteIndex)
+    {
+        ResourceType type = MapSpriteIndexToResourceType(spriteIndex);
+        return GetResourceIcon(type);
+    }
 }

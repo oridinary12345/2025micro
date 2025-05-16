@@ -11,9 +11,6 @@ public class UIMenuSettingsPanel : UIMenuPopup
 	private UIGameButton _buttonClose;
 
 	[SerializeField]
-	private UIGameButton _buttonContactUs;
-
-	[SerializeField]
 	private UIGameButton _twitterButton1;
 
 	[SerializeField]
@@ -21,9 +18,6 @@ public class UIMenuSettingsPanel : UIMenuPopup
 
 	[SerializeField]
 	private UIGameButton _buttonReset;
-
-	[SerializeField]
-	private UIGameButton _promoCodeButton;
 
 	[SerializeField]
 	private UIGameButton _languageButton;
@@ -65,8 +59,6 @@ public class UIMenuSettingsPanel : UIMenuPopup
 		_batterySavingToggle.onValueChanged.AddListener(OnBatterySavingToggled);
 		_musicToggle.onValueChanged.AddListener(OnMusicToggled);
 		_soundFxToggle.onValueChanged.AddListener(OnSoundFXToggled);
-		_buttonContactUs.OnClick(OnContactUsClicked);
-		_promoCodeButton.OnClick(OnPromoCodeClicked);
 		_languageButton.OnClick(OnChooseLanguageClicked);
 		_batterySavingToggle.isOn = !App.Instance.Player.SettingsManager.BatterySavingEnabled;
 		_musicToggle.isOn = !App.Instance.Player.SettingsManager.MusicEnabled;
@@ -96,16 +88,7 @@ public class UIMenuSettingsPanel : UIMenuPopup
 		_inputPopup.Init("RESET GAME", "Please enter the word <color=red>RESET</color> to reset your progress.", "RESET", onContinue, true, false);
 	}
 
-	private void OnPromoCodeClicked()
-	{
-		Action<string> onContinue = delegate(string inputText)
-		{
-			_inputPopup.Hide();
-			App.Instance.Player.RemoteRewardManager.ValidateCode(inputText);
-		};
-		_inputPopup.Show();
-		_inputPopup.Init("CODE", "Enter your code:", "DONE", onContinue, false, true);
-	}
+
 
 	private void OnChooseLanguageClicked()
 	{
@@ -203,11 +186,5 @@ public class UIMenuSettingsPanel : UIMenuPopup
 		return (currentUser == null) ? App.Instance.Player.UID : currentUser.PlayfabId;
 	}
 
-	private void OnContactUsClicked()
-	{
-		string str = "%0D%0A%0D%0A%0D%0AVersion: " + Application.version + "%0D%0AID: " + GetUID() + "%0D%0ADevice: " + SystemInfo.deviceModel + "%0D%0AOS: " + SystemInfo.operatingSystem;
-		string text = "?subject=Micro RPG Support&body=" + str;
-		string url = "mailto:dhamelin@gmail.com" + text.Replace(" ", "%20");
-		Application.OpenURL(url);
-	}
+
 }

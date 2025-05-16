@@ -1,5 +1,5 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UICurrentHeroBox : MonoBehaviour
 {
@@ -10,13 +10,19 @@ public class UICurrentHeroBox : MonoBehaviour
 	private UIGameButton _instantHealButton;
 
 	[SerializeField]
-	private TextMeshProUGUI _upgradePriceText;
+	private Text _upgradePriceText;
 
 	[SerializeField]
-	private TextMeshProUGUI _instantHealPriceText;
+	private Text _instantHealPriceText;
 
 	[SerializeField]
-	private TextMeshProUGUI _levelText;
+	private Text _levelText;
+	
+	[SerializeField]
+	private ResourceDisplay _upgradePriceDisplay; // 升级价格显示
+	
+	[SerializeField]
+	private ResourceDisplay _instantHealPriceDisplay; // 立即治疗价格显示
 
 	[SerializeField]
 	private UIStatusBarCharacter _heroHpBar;
@@ -87,7 +93,31 @@ public class UICurrentHeroBox : MonoBehaviour
 	private void UpdateUpgradePrice()
 	{
 		int levelUpPriceAmount = App.Instance.Player.HeroManager.GetLevelUpPriceAmount(_hero.Id);
-		_upgradePriceText.text = levelUpPriceAmount + InlineSprites.GetLootInlineSprite("lootCoin");
+		
+		// 优先使用ResourceDisplay显示升级价格
+		if (_upgradePriceDisplay != null)
+		{
+			Sprite coinIcon = null;
+			
+			// 尝试从SpriteAssetManager获取图标
+			if (SpriteAssetManager.Instance != null)
+			{
+				coinIcon = SpriteAssetManager.Instance.GetSprite(3); // 金币对应sprite=3
+			}
+			// 如果SpriteAssetManager不可用，尝试使用ResourceManager
+			else if (ResourceManager.Instance != null)
+			{
+				coinIcon = ResourceManager.Instance.GetResourceIconBySpriteIndex(3);
+			}
+			
+			_upgradePriceDisplay.SetValue(coinIcon, levelUpPriceAmount);
+		}
+		// 兼容旧版本
+		else if (_upgradePriceText != null)
+		{
+			_upgradePriceText.text = levelUpPriceAmount + InlineSprites.GetLootInlineSprite("lootCoin");
+		}
+		
 		bool interactable = App.Instance.Player.LootManager.CanAfford("lootCoin", levelUpPriceAmount);
 		_upgradeButton.interactable = interactable;
 		_upgradeButton.SetDisabledExplanation("You don't have enough coins");

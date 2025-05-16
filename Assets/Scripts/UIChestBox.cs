@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UIChestBox : MonoBehaviour
 {
@@ -39,6 +40,12 @@ public class UIChestBox : MonoBehaviour
 	private readonly WaitForSeconds wait = new WaitForSeconds(0.4f);
 
 	private const string TimerString = "+{0} <sprite={1}> in {2}";
+	
+	[SerializeField]
+	private ResourceDisplay _timerResourceDisplay; // 用于显示计时器中的资源
+	
+	[SerializeField]
+	private ResourceDisplay _priceResourceDisplay; // 用于显示价格
 
 	private Coroutine _timerCR;
 
@@ -102,17 +109,46 @@ public class UIChestBox : MonoBehaviour
 		{
 			_readyPanel.SetActive(!_chestData.IsSleeping());
 		}
-		if (_priceText != null)
+		
+		// 更新价格显示
+		LootProfile price = _chestData.GetPrice();
+		
+		// 优先使用ResourceDisplay
+		if (_priceResourceDisplay != null && price.Amount > 0)
 		{
-			LootProfile price = _chestData.GetPrice();
-			_priceText.text = ((price.Amount > 0) ? (price.Amount + InlineSprites.GetLootInlineSprite(price.LootId)) : string.Empty);
-			UpdatePrice();
-			Button.SetDisabledExplanation("You don't have enough rubies");
+			// 获取对应的图标
+			Sprite priceIcon = null;
+			
+			// 尝试从SpriteAssetManager获取图标
+			if (SpriteAssetManager.Instance != null)
+			{
+				// 根据资源类型获取对应的图标
+				int spriteIndex = GetSpriteIndexForLoot(price.LootId);
+				priceIcon = SpriteAssetManager.Instance.GetSprite(spriteIndex);
+			}
+			// 如果SpriteAssetManager不可用，尝试使用ResourceManager
+			else if (ResourceManager.Instance != null)
+			{
+				// 根据资源类型获取对应的ResourceType
+				ResourceType resourceType = GetResourceTypeForLoot(price.LootId);
+				priceIcon = ResourceManager.Instance.GetResourceIcon(resourceType);
+			}
+			
+			_priceResourceDisplay.SetValue(priceIcon, price.Amount);
 		}
+		// 兼容旧版本
+		else if (_priceText != null)
+		{
+			_priceText.text = ((price.Amount > 0) ? (price.Amount + InlineSprites.GetLootInlineSprite(price.LootId)) : string.Empty);
+		}
+		
 		if (_countText != null)
 		{
 			_countText.text = $"{_chestData.Config.Max - _chestData.OpenedCount}/{_chestData.Config.Max}";
 		}
+		
+		UpdatePrice();
+		Button.SetDisabledExplanation("You don't have enough rubies");
 	}
 
 	private void OnLootUpdated(LootProfile loot, int delta, CurrencyReason reason)
@@ -145,9 +181,66 @@ public class UIChestBox : MonoBehaviour
 			StopCoroutine(_timerCR);
 			_timerCR = null;
 		}
+		
 		if (_chestData.IsTimerActive())
 		{
+			// 获取奖励和时间信息
+			LootProfile reward = _chestData.GetPrice(); // 使用GetPrice方法获取奖励信息
+			string timeString = _chestData.GetTimeBeforeRedeem(); // 使用GetTimeBeforeRedeem获取时间信息
+			
+			// 优先使用ResourceDisplay
+			if (_timerResourceDisplay != null)
+			{
+				// 显示ResourceDisplay
+				_timerResourceDisplay.gameObject.SetActive(true);
+				
+				// 获取对应的图标
+				Sprite rewardIcon = null;
+				
+				// 尝试从SpriteAssetManager获取图标
+				if (SpriteAssetManager.Instance != null)
+				{
+					// 根据资源类型获取对应的图标
+					int spriteIndex = GetSpriteIndexForLoot(reward.LootId);
+					rewardIcon = SpriteAssetManager.Instance.GetSprite(spriteIndex);
+				}
+				// 如果SpriteAssetManager不可用，尝试使用ResourceManager
+				else if (ResourceManager.Instance != null)
+				{
+					// 根据资源类型获取对应的ResourceType
+					ResourceType resourceType = GetResourceTypeForLoot(reward.LootId);
+					rewardIcon = ResourceManager.Instance.GetResourceIcon(resourceType);
+				}
+				
+				_timerResourceDisplay.SetValue(rewardIcon, reward.Amount);
+				
+				// 设置时间文本
+				if (_timerText != null)
+				{
+					_timerText.text = $"in {timeString}";
+				}
+			}
+			// 兼容旧版本
+			else if (_timerText != null)
+			{
+				_timerText.text = string.Format(TimerString, reward.Amount, InlineSprites.GetLootInlineSprite(reward.LootId), timeString);
+			}
+			
 			_timerCR = StartCoroutine(UpdateTimerCR());
+		}
+		else
+		{
+			// 隐藏ResourceDisplay
+			if (_timerResourceDisplay != null)
+			{
+				_timerResourceDisplay.gameObject.SetActive(false);
+			}
+			
+			// 清空时间文本
+			if (_timerText != null)
+			{
+				_timerText.text = string.Empty;
+			}
 		}
 	}
 
@@ -155,12 +248,40 @@ public class UIChestBox : MonoBehaviour
 	{
 		while (_chestData.IsTimerActive())
 		{
-			_timerText.text = _chestData.GetTimeBeforeRedeem();
+			if (_timerText != null)
+			{
+				_timerText.text = _chestData.GetTimeBeforeRedeem();
+			}
 			yield return wait;
 		}
-		_timerText.SetText(string.Empty);
-		_timerCR = null;
-		yield return null;
 		UpdateContent();
+	}
+
+	/// <summary>
+	/// 根据资源ID获取对应的sprite索引
+	/// </summary>
+	private int GetSpriteIndexForLoot(string lootId)
+	{
+		switch (lootId)
+		{
+			case "lootCoin": return 3; // 金币对应sprite=3
+			case "lootRuby": return 2; // 宝石对应sprite=2
+			case "lootEnergy": return 4; // 能量对应sprite=4
+			default: return 0;
+		}
+	}
+
+	/// <summary>
+	/// 根据资源ID获取对应的ResourceType
+	/// </summary>
+	private ResourceType GetResourceTypeForLoot(string lootId)
+	{
+		switch (lootId)
+		{
+			case "lootCoin": return ResourceType.Coin;
+			case "lootRuby": return ResourceType.Gem;
+			case "lootEnergy": return ResourceType.Energy;
+			default: return ResourceType.Coin;
+		}
 	}
 }

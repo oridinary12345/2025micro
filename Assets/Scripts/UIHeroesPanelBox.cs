@@ -7,7 +7,10 @@ public class UIHeroesPanelBox : MonoBehaviour
 	private Text _titleLabel;
 
 	[SerializeField]
-	private Text _hpLabel;
+	private ResourceDisplay _hpDisplay;
+
+	[SerializeField]
+	private Text _hpLabel; // 兼容旧版本
 
 	[SerializeField]
 	private Text _levelLabel;
@@ -136,9 +139,31 @@ public class UIHeroesPanelBox : MonoBehaviour
 			return;
 		}
 
-		if (_hpLabel != null)
+		// 获取HP值
+		int hpValue = _hero.HeroConfig.GetHPMax(_hero.Profile.Level);
+		
+		// 优先使用ResourceDisplay
+		if (_hpDisplay != null)
 		{
-			_hpLabel.text = "<sprite=1>" + _hero.HeroConfig.GetHPMax(_hero.Profile.Level).ToString();
+			// 尝试从SpriteAssetManager获取图标
+			Sprite hpIcon = null;
+			
+			if (SpriteAssetManager.Instance != null)
+			{
+				hpIcon = SpriteAssetManager.Instance.GetHeartSprite();
+			}
+			// 如果SpriteAssetManager不可用，尝试使用ResourceManager
+			else if (ResourceManager.Instance != null)
+			{
+				hpIcon = ResourceManager.Instance.GetResourceIconBySpriteIndex(1);
+			}
+			
+			_hpDisplay.SetValue(hpIcon, hpValue);
+		}
+		// 兼容旧版本
+		else if (_hpLabel != null)
+		{
+			_hpLabel.text = "<sprite=1>" + hpValue.ToString();
 		}
 
 		if (_levelLabel != null)
