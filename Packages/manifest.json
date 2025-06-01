@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "cn.tuanjie.minigame.host": "1.0.9",
-    "com.qq.weixin.minigame": "https://gitee.com/wechat-minigame/minigame-tuanjie-transform-sdk.git#v0.1.18",
+    "com.qq.weixin.minigame": "https://gitee.com/wechat-minigame/minigame-tuanjie-transform-sdk.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ads": "4.4.2",
