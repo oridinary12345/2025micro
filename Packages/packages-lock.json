@@ -110,18 +110,18 @@
       "url": "https://packages.tuanjie.cn"
     },
     "com.unity.services.analytics": {
-      "version": "5.0.0",
+      "version": "6.0.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.services.core": "1.10.1"
+        "com.unity.services.core": "1.12.4"
       },
       "url": "https://packages.tuanjie.cn"
     },
     "com.unity.services.core": {
-      "version": "1.12.5",
+      "version": "1.14.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -147,9 +147,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.director": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.tuanjie.cn"
@@ -195,10 +195,7 @@
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.animation": "1.0.0"
-      }
+      "dependencies": {}
     },
     "com.unity.modules.audio": {
       "version": "1.0.0",
