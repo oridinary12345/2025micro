@@ -69,6 +69,9 @@ MonoBehaviour:
   - Name: "French"
     Code: "fr"
     Flags: 0
+  - Name: "Chinese"
+    Code: "zh-CN"
+    Flags: 0
   IgnoreDeviceLanguage: 0
   _AllowUnloadingLanguages: 1
   mTerms:
@@ -78,6 +81,7 @@ MonoBehaviour:
     Languages:
     - "English"
     - "English"
+    - "\u4E2D\u6587"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_french"
@@ -86,6 +90,7 @@ MonoBehaviour:
     Languages:
     - "Fran\u00E7ais"
     - "Fran\u00E7ais"
+    - "\u6CD5\u8BED"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsTitle"
@@ -94,6 +99,7 @@ MonoBehaviour:
     Languages:
     - "Settings"
     - "Options"
+    - "\u8BBE\u7F6E"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsLanguage"
@@ -102,6 +108,7 @@ MonoBehaviour:
     Languages:
     - "Language"
     - "Langue"
+    - "\u8BED\u8A00"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsContact"
@@ -110,6 +117,7 @@ MonoBehaviour:
     Languages:
     - "Contact Us"
     - "Contactez-nous"
+    - "\u8054\u7CFB\u6211\u4EEC"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsPromo"
@@ -118,6 +126,7 @@ MonoBehaviour:
     Languages:
     - "Code"
     - "Code"
+    - "\u4EE3\u7801"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsResetGame"
@@ -126,6 +135,7 @@ MonoBehaviour:
     Languages:
     - "Reset Game"
     - "R\u00E9init."
+    - "\u91CD\u7F6E\u6E38\u620F"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsMusic"
@@ -134,6 +144,7 @@ MonoBehaviour:
     Languages:
     - "Music"
     - "Musique"
+    - "\u97F3\u4E50"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsSoundFX"
@@ -142,6 +153,7 @@ MonoBehaviour:
     Languages:
     - "Sound FX"
     - "FX"
+    - "\u97F3\u6548"
     Flags: 0000
     Languages_Touch: []
   - Term: "txt_settingsBattery"
@@ -150,8 +162,9 @@ MonoBehaviour:
     Languages:
     - "Battery\nSaving"
     - "\u00C9conomie\nBatterie"
+    - "\u7701\u7535\n\u6A21\u5F0F"
     Flags: 0000
     Languages_Touch: []
   CaseInsensitiveTerms: 0
   OnMissingTranslation: 1
-  mTerm_AppName: 
+  mTerm_AppName:

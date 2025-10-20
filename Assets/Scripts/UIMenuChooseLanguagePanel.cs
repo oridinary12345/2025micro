@@ -11,6 +11,9 @@ public class UIMenuChooseLanguagePanel : UIMenuPopup
 	[SerializeField]
 	private UIGameButton _frenchButton;
 
+	[SerializeField]
+	private UIGameButton _chineseButton;
+
 	protected override void Awake()
 	{
 		base.Awake();
@@ -24,6 +27,13 @@ public class UIMenuChooseLanguagePanel : UIMenuPopup
 		{
 			OnLanguageSelected(SystemLanguage.French);
 		});
+		if (_chineseButton != null)
+		{
+			_chineseButton.OnClick(delegate
+			{
+				OnLanguageSelected(SystemLanguage.Chinese);
+			});
+		}
 	}
 
 	private void OnLanguageSelected(SystemLanguage language)
